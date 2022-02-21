@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <title>Papyrus - Author</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+    <link rel="stylesheet" type="text/css" href="https://aleylara.github.io/Papyrus/theme/css/main.css" />
+    <link rel="stylesheet" href="https://aleylara.github.io/Papyrus/theme/css/stork.css">
+    <link rel="stylesheet" media="screen and (prefers-color-scheme: dark)"
+        href="https://aleylara.github.io/Papyrus/theme/css/stork-dark.css">
+    <link
+        href="https://aleylara.github.io/Papyrus/feeds/all.atom.xml"
+        type="application/atom+xml" rel="alternate" title="Papyrus Atom Feed" />
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
+                '(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+</head>
+
+<body class="min-h-screen flex flex-col max-w-7xl lg:max-w-none text-zinc-800 bg-neutral-100 
+    dark:bg-neutral-900 dark:text-zinc-300 container mx-auto justify-center md:px-3 ">
+    <nav class="sm:flex sm:justify-between xl:ml-32 pl-4 items-center">
+        <div class="flex pt-4">
+            <h1 class="font-semibold text-2xl"><a href="https://aleylara.github.io/Papyrus/">Papyrus</a></h1>
+            <button id="theme-toggle" type="button"
+                class="text-zinc-700 dark:text-zinc-400 rounded-full focus:outline-none text-sm ml-2 p-1">
+                <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                </svg>
+                <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                        fill-rule="evenodd" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+        <ul class="flex flex-wrap lg:mr-24 md:pt-0">
+            <li class="mr-4 pt-6"><a  href="https://aleylara.github.io/Papyrus/pages/about.html">About</a></li>
+            <li class="mr-4 pt-6"><a  href="https://aleylara.github.io/Papyrus/pages/events.html">Events</a></li>
+            <li class="mr-4 pt-6"><a  href="https://aleylara.github.io/Papyrus/archives.html">Archive</a></li>
+            <li class="mr-4 pt-6"><a                     href="https://aleylara.github.io/Papyrus/categories.html">Categories</a></li>
+            <li class="mr-4 pt-6"><a  href="https://aleylara.github.io/Papyrus/tags.html">Tags</a></li>
+            <li class="mr-4 pt-6"><a  href="https://aleylara.github.io/Papyrus/search.html">Search</a></li>
+        </ul>
+    </nav>
+    <div class="flex-grow md:max-w-screen-md md:mx-auto md:w-3/4 px-4">
+
+<div class="my-12 md:my-24 text-zinc-800 dark:text-zinc-300">
+  <h1 class="mb-6 text-3xl font-bold">Papyrus</h1>
+    <p class="mb-8 text-zinc-500 dark:text-zinc-400"> A fast and responsive theme built for the <a class="underline" 
+href="https://blog.getpelican.com/">Pelican</a> site generator.<br>
+The theme is inspired by <a class="underline" 
+href="https://github.com/adityatelange/hugo-PaperMod">Hugo-PaperMod</a>. 
+It is styled using <a class="underline" 
+href="https://tailwindcss.com/">Tailwind CSS</a>. 
+It supports dark mode and built in search function.
+</p>
+  <ul class="flex px-2 space-x-4 text-lg">
+    <li><a href="https://github.com/aleylara/Papyrus"><i class="fab fa-github fa-lg" aria-hidden="true" target="_blank"
+          rel="noopener noreferrer" title="github"></i></a></li>
+    <li><a href="https://twitter.com/"><i class="fab fa-twitter fa-lg" aria-hidden="true" target="_blank"
+          rel="noopener noreferrer" title="twitter"></i></a></li>
+    <li><a href="https://aleylara.github.io/Papyrus/
+feeds/all.atom.xml"
+        type="application/atom+xml" title="feeds/all.atom.xml" rel="alternate"><i class="fa fa-rss fa-lg"
+          aria-hidden="true"></i></a>
+    </li>
+  </ul>
+</div>
+
+<div class="py-1">
+  <ul>
+    <a href="https://aleylara.github.io/Papyrus/pelopeiadesque-facta.html" rel="bookmark" title="Permalink to Pelopeiadesque facta">
+      <li class="transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+        <div class="bg-white dark:bg-zinc-800 p-4 md:p-6 mb-4 rounded-lg">
+          <header class="font-semibold text-2xl mb-2">
+            <h1>Pelopeiadesque facta</h1>
+          </header>
+          <div class="max-w-7xl container mx-auto my-4 justify-center overflow-hidden mb-2 text-sm text-zinc-800 dark:text-zinc-400
+          prose lg:max-w-none prose-headings:text-zinc-800 prose-headings:dark:text-zinc-300 
+          prose-h1:text-3xl prose-headings:font-semibold 
+          prose-pre:bg-zinc-200 prose-pre:text-zinc-800
+          dark:prose-pre:bg-zinc-800 dark:prose-pre:text-zinc-200
+          prose-blockquote:text-zinc-800
+          dark:prose-blockquote:text-zinc-200
+          prose-a:text-gray-500
+          dark:prose-a:text-gray-400
+          dark:prose-strong:text-zinc-200 
+          dark:prose-code:text-zinc-200
+          dark:prose-code:bg-zinc-800
+          prose-code:bg-zinc-200
+          prose-code:font-light
+          prose-img:rounded-md
+          ">
+            <p>Lorem markdownum omnes, de cogamque, ventorumque quique de
+et. Tyrios illis bene aperto protegit illuc Achaidas nihil peregit <em>terram
+conveniunt</em> sublatus! Reppulit quo amore nova videt Diana.</p>
+          </div>
+          <div class="flex text-xs text-zinc-800 dark:text-zinc-400">
+            <time>December 30, 2020</time>
+            <div>
+                <span>&nbsp;·&nbsp;1 min read</span>
+            </div>
+            <div>
+                <span>&nbsp;·&nbsp;Author</span>
+            </div>
+          </div>
+      </li>
+    </a>
+    <a href="https://aleylara.github.io/Papyrus/vituli-cubitique-antiquas-quot.html" rel="bookmark" title="Permalink to Vituli cubitique antiquas quot">
+      <li class="transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+        <div class="bg-white dark:bg-zinc-800 p-4 md:p-6 mb-4 rounded-lg">
+          <header class="font-semibold text-2xl mb-2">
+            <h1>Vituli cubitique antiquas quot</h1>
+          </header>
+          <div class="max-w-7xl container mx-auto my-4 justify-center overflow-hidden mb-2 text-sm text-zinc-800 dark:text-zinc-400
+          prose lg:max-w-none prose-headings:text-zinc-800 prose-headings:dark:text-zinc-300 
+          prose-h1:text-3xl prose-headings:font-semibold 
+          prose-pre:bg-zinc-200 prose-pre:text-zinc-800
+          dark:prose-pre:bg-zinc-800 dark:prose-pre:text-zinc-200
+          prose-blockquote:text-zinc-800
+          dark:prose-blockquote:text-zinc-200
+          prose-a:text-gray-500
+          dark:prose-a:text-gray-400
+          dark:prose-strong:text-zinc-200 
+          dark:prose-code:text-zinc-200
+          dark:prose-code:bg-zinc-800
+          prose-code:bg-zinc-200
+          prose-code:font-light
+          prose-img:rounded-md
+          ">
+            <p>Lorem markdownum omnes, de cogamque, ventorumque quique de
+et. Tyrios illis bene aperto protegit illuc Achaidas nihil peregit <em>terram
+conveniunt</em> sublatus! Reppulit quo amore nova videt Diana.</p>
+          </div>
+          <div class="flex text-xs text-zinc-800 dark:text-zinc-400">
+            <time>October 03, 2020</time>
+            <div>
+                <span>&nbsp;·&nbsp;1 min read</span>
+            </div>
+            <div>
+                <span>&nbsp;·&nbsp;Author</span>
+            </div>
+          </div>
+      </li>
+    </a>
+    <a href="https://aleylara.github.io/Papyrus/luvenem-auras-umbras.html" rel="bookmark" title="Permalink to Luvenem auras umbras">
+      <li class="transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+        <div class="bg-white dark:bg-zinc-800 p-4 md:p-6 mb-4 rounded-lg">
+          <header class="font-semibold text-2xl mb-2">
+            <h1>Luvenem auras umbras</h1>
+          </header>
+          <div class="max-w-7xl container mx-auto my-4 justify-center overflow-hidden mb-2 text-sm text-zinc-800 dark:text-zinc-400
+          prose lg:max-w-none prose-headings:text-zinc-800 prose-headings:dark:text-zinc-300 
+          prose-h1:text-3xl prose-headings:font-semibold 
+          prose-pre:bg-zinc-200 prose-pre:text-zinc-800
+          dark:prose-pre:bg-zinc-800 dark:prose-pre:text-zinc-200
+          prose-blockquote:text-zinc-800
+          dark:prose-blockquote:text-zinc-200
+          prose-a:text-gray-500
+          dark:prose-a:text-gray-400
+          dark:prose-strong:text-zinc-200 
+          dark:prose-code:text-zinc-200
+          dark:prose-code:bg-zinc-800
+          prose-code:bg-zinc-200
+          prose-code:font-light
+          prose-img:rounded-md
+          ">
+            <p>Lorem markdownum omnes, de cogamque, ventorumque quique de
+et. Tyrios illis bene aperto protegit illuc Achaidas nihil peregit <em>terram
+conveniunt</em> sublatus! Reppulit quo amore nova videt Diana.</p>
+          </div>
+          <div class="flex text-xs text-zinc-800 dark:text-zinc-400">
+            <time>February 02, 2020</time>
+            <div>
+                <span>&nbsp;·&nbsp;1 min read</span>
+            </div>
+            <div>
+                <span>&nbsp;·&nbsp;Author</span>
+            </div>
+          </div>
+      </li>
+    </a>
+    <a href="https://aleylara.github.io/Papyrus/erat-fisa-ignavis-cornua.html" rel="bookmark" title="Permalink to Erat fisa ignavis cornua">
+      <li class="transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+        <div class="bg-white dark:bg-zinc-800 p-4 md:p-6 mb-4 rounded-lg">
+          <header class="font-semibold text-2xl mb-2">
+            <h1>Erat fisa ignavis cornua</h1>
+          </header>
+          <div class="max-w-7xl container mx-auto my-4 justify-center overflow-hidden mb-2 text-sm text-zinc-800 dark:text-zinc-400
+          prose lg:max-w-none prose-headings:text-zinc-800 prose-headings:dark:text-zinc-300 
+          prose-h1:text-3xl prose-headings:font-semibold 
+          prose-pre:bg-zinc-200 prose-pre:text-zinc-800
+          dark:prose-pre:bg-zinc-800 dark:prose-pre:text-zinc-200
+          prose-blockquote:text-zinc-800
+          dark:prose-blockquote:text-zinc-200
+          prose-a:text-gray-500
+          dark:prose-a:text-gray-400
+          dark:prose-strong:text-zinc-200 
+          dark:prose-code:text-zinc-200
+          dark:prose-code:bg-zinc-800
+          prose-code:bg-zinc-200
+          prose-code:font-light
+          prose-img:rounded-md
+          ">
+            <p>Lorem markdownum omnes, de cogamque, ventorumque quique de
+et. Tyrios illis bene aperto protegit illuc Achaidas nihil peregit <em>terram
+conveniunt</em> sublatus! Reppulit quo amore nova videt Diana.</p>
+          </div>
+          <div class="flex text-xs text-zinc-800 dark:text-zinc-400">
+            <time>February 28, 2019</time>
+            <div>
+                <span>&nbsp;·&nbsp;1 min read</span>
+            </div>
+            <div>
+                <span>&nbsp;·&nbsp;Author</span>
+            </div>
+          </div>
+      </li>
+    </a>
+    <a href="https://aleylara.github.io/Papyrus/terram-cultro-omnes.html" rel="bookmark" title="Permalink to Terram cultro omnes">
+      <li class="transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+        <div class="bg-white dark:bg-zinc-800 p-4 md:p-6 mb-4 rounded-lg">
+          <header class="font-semibold text-2xl mb-2">
+            <h1>Terram cultro omnes</h1>
+          </header>
+          <div class="max-w-7xl container mx-auto my-4 justify-center overflow-hidden mb-2 text-sm text-zinc-800 dark:text-zinc-400
+          prose lg:max-w-none prose-headings:text-zinc-800 prose-headings:dark:text-zinc-300 
+          prose-h1:text-3xl prose-headings:font-semibold 
+          prose-pre:bg-zinc-200 prose-pre:text-zinc-800
+          dark:prose-pre:bg-zinc-800 dark:prose-pre:text-zinc-200
+          prose-blockquote:text-zinc-800
+          dark:prose-blockquote:text-zinc-200
+          prose-a:text-gray-500
+          dark:prose-a:text-gray-400
+          dark:prose-strong:text-zinc-200 
+          dark:prose-code:text-zinc-200
+          dark:prose-code:bg-zinc-800
+          prose-code:bg-zinc-200
+          prose-code:font-light
+          prose-img:rounded-md
+          ">
+            <p>Lorem markdownum omnes, de cogamque, ventorumque quique de
+et. Tyrios illis bene aperto protegit illuc Achaidas nihil peregit <em>terram
+conveniunt</em> sublatus! Reppulit quo amore nova videt Diana.</p>
+          </div>
+          <div class="flex text-xs text-zinc-800 dark:text-zinc-400">
+            <time>February 02, 2019</time>
+            <div>
+                <span>&nbsp;·&nbsp;1 min read</span>
+            </div>
+            <div>
+                <span>&nbsp;·&nbsp;Author</span>
+            </div>
+          </div>
+      </li>
+    </a>
+    <a href="https://aleylara.github.io/Papyrus/licet-orbes-ibat-parvi-obliquo-vulneribus-variusque-formam-aquosae.html" rel="bookmark" title="Permalink to Licet orbes ibat parvi obliquo Vulneribus variusque formam aquosae">
+      <li class="transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+        <div class="bg-white dark:bg-zinc-800 p-4 md:p-6 mb-4 rounded-lg">
+          <header class="font-semibold text-2xl mb-2">
+            <h1>Licet orbes ibat parvi obliquo Vulneribus variusque formam aquosae</h1>
+          </header>
+          <div class="max-w-7xl container mx-auto my-4 justify-center overflow-hidden mb-2 text-sm text-zinc-800 dark:text-zinc-400
+          prose lg:max-w-none prose-headings:text-zinc-800 prose-headings:dark:text-zinc-300 
+          prose-h1:text-3xl prose-headings:font-semibold 
+          prose-pre:bg-zinc-200 prose-pre:text-zinc-800
+          dark:prose-pre:bg-zinc-800 dark:prose-pre:text-zinc-200
+          prose-blockquote:text-zinc-800
+          dark:prose-blockquote:text-zinc-200
+          prose-a:text-gray-500
+          dark:prose-a:text-gray-400
+          dark:prose-strong:text-zinc-200 
+          dark:prose-code:text-zinc-200
+          dark:prose-code:bg-zinc-800
+          prose-code:bg-zinc-200
+          prose-code:font-light
+          prose-img:rounded-md
+          ">
+            <p>Lorem markdownum omnes, de cogamque, ventorumque quique de
+et. Tyrios illis bene aperto protegit illuc Achaidas nihil peregit <em>terram
+conveniunt</em> sublatus! Reppulit quo amore nova videt Diana.</p>
+          </div>
+          <div class="flex text-xs text-zinc-800 dark:text-zinc-400">
+            <time>February 01, 2019</time>
+            <div>
+                <span>&nbsp;·&nbsp;1 min read</span>
+            </div>
+            <div>
+                <span>&nbsp;·&nbsp;Author</span>
+            </div>
+          </div>
+      </li>
+    </a>
+  </ul>
+</div>
+<div class="relative h-12 mt-3">
+    <a href="https://aleylara.github.io/Papyrus/author/author.html">
+        <button
+            class="bg-zinc-800 dark:bg-zinc-300 rounded-full py-2.5 px-4 text-zinc-100 dark:text-zinc-800  font-medium text-xs absolute left-0">
+            &laquo; Prev Page
+        </button></a>
+</div>
+
+    </div>
+    <footer class="flex w-full text-xs justify-center mt-10 mb-6 text-zinc-500 dark:text-zinc-400">
+        <div class="px-4">
+            <span>©2022&nbsp;&#8226;&nbsp;</span>Powered by
+            <a class="underline" href="https://getpelican.com/">Pelican</a>&nbsp;&
+            <a class="underline" href="https://github.com/aleylara/Papyrus">&nbsp;Papyrus</a>
+        </div>
+    </footer>
+
+
+    <script>
+        let themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        let themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
+                '(prefers-color-scheme: dark)').matches)) {
+            themeToggleLightIcon.classList.remove('hidden');
+        } else {
+            themeToggleDarkIcon.classList.remove('hidden');
+        }
+        let themeToggleBtn = document.getElementById('theme-toggle');
+        themeToggleBtn.addEventListener('click', function () {
+            themeToggleDarkIcon.classList.toggle('hidden');
+            themeToggleLightIcon.classList.toggle('hidden');
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                }
+            } else {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            }
+        });
+    </script>
+    <script src="https://files.stork-search.net/releases/v1.4.0/stork.js"></script>
+    <script>
+        stork.register("sitesearch", "https://aleylara.github.io/Papyrus/search-index.st")
+    </script>
+</body>
+
+</html>

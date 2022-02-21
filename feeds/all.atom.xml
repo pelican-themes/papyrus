@@ -1,0 +1,1063 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Papyrus</title><link href="https://aleylara.github.io/Papyrus/" rel="alternate"></link><link href="https://aleylara.github.io/Papyrus/feeds/all.atom.xml" rel="self"></link><id>https://aleylara.github.io/Papyrus/</id><updated>2022-02-12T00:00:00+11:00</updated><entry><title>Installation</title><link href="https://aleylara.github.io/Papyrus/installation.html" rel="alternate"></link><published>2022-02-12T00:00:00+11:00</published><updated>2022-02-12T00:00:00+11:00</updated><author><name>Author</name></author><id>tag:aleylara.github.io,2022-02-12:/Papyrus/installation.html</id><summary type="html">&lt;p&gt;Papyrus is a lightweight theme for the Pelican static site generator.
+The theme is inspired by Hugo-PaperMod. It is styled using Tailwind CSS.&lt;/p&gt;</summary><content type="html">&lt;h1 id="papyrus"&gt;Papyrus&lt;/h1&gt;
+&lt;p&gt;A fast and responsive theme built for the &lt;a href="https://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; site generator. The theme is inspired by &lt;a href="https://github.com/adityatelange/hugo-PaperMod"&gt;Hugo-PaperMod&lt;/a&gt;. It is styled using &lt;a href="https://tailwindcss.com/"&gt;Tailwind CSS&lt;/a&gt;. It supports dark mode and built in search function. &lt;/p&gt;
+&lt;h3 id="installation"&gt;Installation&lt;/h3&gt;
+&lt;p&gt;The theme requires the &lt;a href="https://github.com/pelican-plugins/search"&gt;pelican-search&lt;/a&gt;, &lt;a href="https://github.com/pelican-plugins/neighbors"&gt;pelican-neighbors&lt;/a&gt;, &lt;a href="https://github.com/JenkinsDev/pelican-readtime"&gt;pelican-readtime&lt;/a&gt; and &lt;a href="https://github.com/ingwinlu/pelican-toc"&gt;pelican-toc&lt;/a&gt; plugins. First three plugins can be installed using &lt;code&gt;pip&lt;/code&gt;. Pelican-toc will be installed manually. We will also need &lt;a href="https://stork-search.net/"&gt;stork&lt;/a&gt; and &lt;code&gt;beautifulsoup4&lt;/code&gt; as dependencies.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ pip install pelican-search
+$ pip install pelican-neighbors
+$ pip install pelican-readtime
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Create two directories &lt;code&gt;themes&lt;/code&gt; and &lt;code&gt;pelican-plugins&lt;/code&gt; inside the root level of your project. Clone the Papyrus theme inside the &lt;code&gt;themes&lt;/code&gt; directory that you created.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ mkdir themes
+$ &lt;span class="nb"&gt;cd&lt;/span&gt; themes
+$ git clone https://github.com/aleylara/Papyrus.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now clone the pelican-toc plugin repo (not available via pip) into your pelican-plugins directory and install &lt;code&gt;beautifulsoup4&lt;/code&gt; that is required by this plugin.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ mkdir pelican-plugins
+$ &lt;span class="nb"&gt;cd&lt;/span&gt; pelican-plugins
+$ git clone https://github.com/ingwinlu/pelican-toc.git
+$ pip install beautifulsoup4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Papyrus theme is already setup for your search functionality. However you will still need to have the &lt;code&gt;stork&lt;/code&gt; package installed in your operating system. Verify &lt;a href="https://stork-search.net/"&gt;stork&lt;/a&gt; is in your path by &lt;code&gt;stork -h&lt;/code&gt; otherwise go ahead and install it.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Install using Homebrew&lt;/span&gt;
+$ brew install stork-search/stork-tap/stork
+
+&lt;span class="c1"&gt;# Install using the Rust toolchain and install Stork with Cargo &lt;/span&gt;
+$ cargo install stork-search --locked
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="settings"&gt;Settings&lt;/h3&gt;
+&lt;p&gt;This is the &lt;code&gt;pelicanconf.py&lt;/code&gt; settings file for the demo site, please change values to meet your needs.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;AUTHOR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'Author'&lt;/span&gt;
+&lt;span class="n"&gt;SITENAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'Papyrus'&lt;/span&gt;
+&lt;span class="n"&gt;SITEURL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'https://aleylara.github.io/Papyrus/'&lt;/span&gt;
+&lt;span class="n"&gt;TIMEZONE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'Australia/Sydney'&lt;/span&gt;
+&lt;span class="n"&gt;DEFAULT_LANG&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'en'&lt;/span&gt;
+
+&lt;span class="n"&gt;SUBTITLE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'Papyrus'&lt;/span&gt;
+&lt;span class="n"&gt;SUBTEXT&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'''A fast and responsive theme built for the &amp;lt;a class="underline" &lt;/span&gt;
+&lt;span class="s1"&gt;href="https://blog.getpelican.com/"&amp;gt;Pelican&amp;lt;/a&amp;gt; site generator.&amp;lt;br&amp;gt;&lt;/span&gt;
+&lt;span class="s1"&gt;The theme is inspired by &amp;lt;a class="underline" &lt;/span&gt;
+&lt;span class="s1"&gt;href="https://github.com/adityatelange/hugo-PaperMod"&amp;gt;Hugo-PaperMod&amp;lt;/a&amp;gt;. &lt;/span&gt;
+&lt;span class="s1"&gt;It is styled using &amp;lt;a class="underline" &lt;/span&gt;
+&lt;span class="s1"&gt;href="https://tailwindcss.com/"&amp;gt;Tailwind CSS&amp;lt;/a&amp;gt;. &lt;/span&gt;
+&lt;span class="s1"&gt;It supports dark mode and built in search function.&lt;/span&gt;
+&lt;span class="s1"&gt;'''&lt;/span&gt;
+&lt;span class="n"&gt;COPYRIGHT&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'&amp;copy;2022'&lt;/span&gt;
+&lt;span class="n"&gt;PATH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'content'&lt;/span&gt;
+&lt;span class="n"&gt;THEME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'themes/Papyrus'&lt;/span&gt;
+&lt;span class="n"&gt;THEME_STATIC_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'static'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;PLUGIN_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'pelican-plugins'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'readtime'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'search'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'neighbors'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'pelican-toc'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+&lt;span class="n"&gt;DISPLAY_PAGES_ON_MENU&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
+&lt;span class="n"&gt;DIRECT_TEMPLATES&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s1"&gt;'index'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'search'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'tags'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'categories'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'archives'&lt;/span&gt;&lt;span class="p"&gt;,))&lt;/span&gt;
+&lt;span class="n"&gt;PAGINATED_TEMPLATES&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'index'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'tag'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'category'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'author'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'archives'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;24&lt;/span&gt;&lt;span class="p"&gt;,}&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Site search plugin&lt;/span&gt;
+&lt;span class="n"&gt;SEARCH_MODE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"output"&lt;/span&gt;
+&lt;span class="n"&gt;SEARCH_HTML_SELECTOR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"main"&lt;/span&gt;
+&lt;span class="c1"&gt;# Table of Content Plugin&lt;/span&gt;
+&lt;span class="n"&gt;TOC&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="s1"&gt;'TOC_HEADERS'&lt;/span&gt;       &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'^h[1-3]'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;# What headers should be included in&lt;/span&gt;
+                                     &lt;span class="c1"&gt;# the generated toc&lt;/span&gt;
+                                     &lt;span class="c1"&gt;# Expected format is a regular expression&lt;/span&gt;
+    &lt;span class="s1"&gt;'TOC_RUN'&lt;/span&gt;           &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'true'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;    &lt;span class="c1"&gt;# Default value for toc generation,&lt;/span&gt;
+                                     &lt;span class="c1"&gt;# if it does not evaluate&lt;/span&gt;
+                                     &lt;span class="c1"&gt;# to 'true' no toc will be generated&lt;/span&gt;
+    &lt;span class="s1"&gt;'TOC_INCLUDE_TITLE'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'false'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;    &lt;span class="c1"&gt;# If 'true' include title in toc&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Feed generation is usually not desired when developing&lt;/span&gt;
+&lt;span class="n"&gt;FEED_ALL_ATOM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'feeds/all.atom.xml'&lt;/span&gt;
+&lt;span class="n"&gt;CATEGORY_FEED_ATOM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;
+&lt;span class="n"&gt;TRANSLATION_FEED_ATOM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;
+&lt;span class="n"&gt;AUTHOR_FEED_ATOM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;
+&lt;span class="n"&gt;AUTHOR_FEED_RSS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;
+&lt;span class="n"&gt;RSS_FEED_SUMMARY_ONLY&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Social widgets&lt;/span&gt;
+&lt;span class="n"&gt;SOCIAL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'github'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'https://github.com/aleylara/Papyrus'&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'twitter'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'https://twitter.com/'&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Article share widgets&lt;/span&gt;
+&lt;span class="n"&gt;SHARE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"twitter"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"https://twitter.com/intent/tweet/?text=Features&amp;amp;amp;url="&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"linkedin"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"https://www.linkedin.com/sharing/share-offsite/?url="&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"reddit"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"https://reddit.com/submit?url="&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"facebook"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"https://facebook.com/sharer/sharer.php?u="&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"whatsapp"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"https://api.whatsapp.com/send?text=Features - "&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"telegram"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"https://telegram.me/share/url?text=Features&amp;amp;amp;url="&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;DEFAULT_PAGINATION&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Uncomment following line if you want document-relative URLs when developing&lt;/span&gt;
+&lt;span class="c1"&gt;#RELATIVE_URLS = True&lt;/span&gt;
+
+&lt;span class="c1"&gt;# DISQUS_SITENAME = ''&lt;/span&gt;
+&lt;span class="c1"&gt;# GOOGLE_ANALYTICS = ''&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="generate-articles"&gt;Generate Articles&lt;/h3&gt;
+&lt;p&gt;A sample article header is below. Adding a &lt;code&gt;Summary&lt;/code&gt; field is highly recommended. It substitutes as the article decription and gets added into html &lt;code&gt;&amp;lt;meta name="description" content="..."&amp;gt;&lt;/code&gt;. Summaries are also used in blog's home page. They help to keep similar height article previews without titles, images or code blocks.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Title: Installation
+Date: 2021-12-14
+Tags: CSS, Markdown, Python, AI
+Category: Software
+Summary: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Articles created inside directory named &lt;code&gt;pages&lt;/code&gt; will have a separate static page and a direct link similar to the &lt;code&gt;About&lt;/code&gt; page in the demo.&lt;/p&gt;
+&lt;p&gt;You can now run the development server and visit the &lt;code&gt;http://localhost:8000&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; myBlog
+$ pelican --autoreload --listen --ignore-cache
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Final project directory structure should look similar to this. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ &lt;span class="o"&gt;(&lt;/span&gt;pelican&lt;span class="o"&gt;)&lt;/span&gt; ➜ myProject tree
+&amp;boxvr;&amp;boxh;&amp;boxh; myBlog
+&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxvr;&amp;boxh;&amp;boxh; content
+&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxvr;&amp;boxh;&amp;boxh; images
+&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxur;&amp;boxh;&amp;boxh; camera.png
+&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxvr;&amp;boxh;&amp;boxh; pages
+&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;   &amp;boxvr;&amp;boxh;&amp;boxh; about.md
+&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;   &amp;boxur;&amp;boxh;&amp;boxh; events.md
+&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxvr;&amp;boxh;&amp;boxh; Hardware
+&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;   &amp;boxvr;&amp;boxh;&amp;boxh; article-one.md
+&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;   &amp;boxur;&amp;boxh;&amp;boxh; article-two.md
+&amp;boxv;   &amp;boxv; &amp;nbsp;&amp;nbsp;&amp;boxur;&amp;boxh;&amp;boxh; Software
+&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;&amp;nbsp;&amp;nbsp;     &amp;boxvr;&amp;boxh;&amp;boxh; article-three.md
+&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;&amp;nbsp;&amp;nbsp;     &amp;boxur;&amp;boxh;&amp;boxh; article-four.md
+&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxvr;&amp;boxh;&amp;boxh; Makefile
+&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxvr;&amp;boxh;&amp;boxh; output
+&amp;boxv;   &amp;boxv;
+&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxvr;&amp;boxh;&amp;boxh; pelicanconf.py
+&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxvr;&amp;boxh;&amp;boxh; pelican-plugins
+&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxur;&amp;boxh;&amp;boxh; pelican-toc
+&amp;boxv;   &amp;boxv;
+&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxvr;&amp;boxh;&amp;boxh; publishconf.py
+&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxvr;&amp;boxh;&amp;boxh; tasks.py
+&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxur;&amp;boxh;&amp;boxh; themes
+&amp;boxv;&amp;nbsp;&amp;nbsp;     &amp;boxur;&amp;boxh;&amp;boxh; Papyrus
+&amp;boxur;&amp;boxh;&amp;boxh; venv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="image-size-and-placement"&gt;Image size and placement&lt;/h3&gt;
+&lt;p&gt;Images can be placed on page by adding a custom class names such as &lt;code&gt;image-left&lt;/code&gt;, &lt;code&gt;image-right&lt;/code&gt;, &lt;code&gt;image-center&lt;/code&gt; in your markdown.&lt;/p&gt;
+&lt;p&gt;Similarly, placed images can be given a size using custom classes &lt;code&gt;image-thumbnail&lt;/code&gt;, &lt;code&gt;image-small&lt;/code&gt;, &lt;code&gt;image-medium&lt;/code&gt; and&lt;code&gt;image-large&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;You can use &lt;code&gt;&amp;lt;img/&amp;gt;&lt;/code&gt; tags along with the custom image classes straight in your Markdown.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;img&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"{static}/images/screenshot.png"&lt;/span&gt; &lt;span class="na"&gt;alt&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"screenshot"&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"image-left image-medium"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;img&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"{static}/images/screenshot.png"&lt;/span&gt; &lt;span class="na"&gt;alt&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"screenshot"&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"image-right image-thumbnail"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+
+Alternatively you could use inline styling.
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;img&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"{static}/images/screenshot.png"&lt;/span&gt; &lt;span class="na"&gt;alt&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"screenshot"&lt;/span&gt; &lt;span class="na"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"width:200px;"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="embeding-youtube-videos"&gt;Embeding YouTube Videos&lt;/h3&gt;
+&lt;p&gt;In order to have a responsiveness video tumbnail, the &lt;code&gt;&amp;lt;iframe&amp;gt;&lt;/code&gt; tags must be wrapped inside the &lt;code&gt;&amp;lt;div class="aspect-w-16 aspect-h-9"&amp;gt;&amp;lt;/div&amp;gt;&lt;/code&gt; in your markdown file.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"aspect-w-16 aspect-h-9"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;iframe&lt;/span&gt; &lt;span class="na"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"736"&lt;/span&gt; &lt;span class="na"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"414"&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://www.youtube.com/embed/TmWIrBPE6Bc"&lt;/span&gt; &lt;span class="na"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"YouTube video player"&lt;/span&gt; &lt;span class="na"&gt;frameborder&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"0"&lt;/span&gt; &lt;span class="na"&gt;allow&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"&lt;/span&gt; &lt;span class="na"&gt;allowfullscreen&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;iframe&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="tailwind-css"&gt;Tailwind CSS&lt;/h3&gt;
+&lt;p&gt;If you would like to make any local changes, tailwindcss configuration files are included with the theme. First go into the Papyrus directory and install missing packages with &lt;code&gt;npm install&lt;/code&gt;.
+Then run the development server that watches for your changed tailwind classes inside the templates folder and updates &lt;code&gt;main.css&lt;/code&gt; on the go.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Initial installation of packages&lt;/span&gt;
+$ npm install
+
+&lt;span class="c1"&gt;# JIT compiled main.css&lt;/span&gt;
+$ npm run dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Software"></category><category term="Web"></category><category term="Mobile"></category></entry><entry><title>Image sizing and placement</title><link href="https://aleylara.github.io/Papyrus/image-sizing-and-placement.html" rel="alternate"></link><published>2022-02-11T00:00:00+11:00</published><updated>2022-02-11T00:00:00+11:00</updated><author><name>Author</name></author><id>tag:aleylara.github.io,2022-02-11:/Papyrus/image-sizing-and-placement.html</id><summary type="html">&lt;p&gt;Peli-Papyrus tries to make image placement and sizing a little bit easier when generating your articles.
+It includes built in custom classes that you can make use of directly in your Markdowns.&lt;/p&gt;</summary><content type="html">&lt;h1 id="float-image-left"&gt;Float Image Left&lt;/h1&gt;
+&lt;p&gt;&lt;img class="image-small image-left" src="https://aleylara.github.io/Papyrus/images/camera.png"/&gt;
+Lorem markdownum iuvenumque colebat pressa, frustra formosus quoque conterruit.
+Quaeri sagittas Solis praedelassat aera pretium, a voces secundo tellus. Nomina
+aura redeamus postquam regno, scribit lacrimisque demisso pulcherrime fecerat.
+Turba amor utinam humo ruunt funera, Cythereiadasque soror non remige cam in
+visum origine avellere, hoste. Deceant posita iuncti, ingens, iniuria sub fer nostrae ausam Cenaeo
+os Byblis omnia. Nisi mutatas steterat addere. Interque tantae fama; imperio et
+expertus profugam perlucentes saepe, Pagasaea confinia, dum. &lt;em&gt;Ignes coma&lt;/em&gt;
+postes, septem, si Pindo, amor ut putes quaeritur, diu iuvenumque colebat pressa, frustra formosus quoque conterruit.
+Quaeri sagittas Solis praedelassat aera pretium, a voces secundo tellus. Nomina
+aura redeamus postquam regno, scribit lacrimisque demisso pulcherrime fecerat.
+Turba amor utinam humo ruunt funera, Cythereiadasque soror non remige cam in
+visum origine avellere, hoste. Deceant posita iuncti, ingens, iniuria sub fer nostrae ausam Cenaeo
+os Byblis omnia. Nisi mutatas steterat addere. Interque tantae fama; imperio et
+expertus profugam perlucentes saepe, Pagasaea confinia, dum. &lt;em&gt;Ignes coma&lt;/em&gt;
+postes, septem, si .&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Bene si incunabula saxo Peparethos et versa&lt;/li&gt;
+&lt;li&gt;Caeneus trahit&lt;/li&gt;
+&lt;li&gt;Viderat consilium aliquid abdit talia iam modo&lt;/li&gt;
+&lt;li&gt;Onerosior retro&lt;/li&gt;
+&lt;li&gt;Haerebat crinitas ara quocamque mersit eloquioque adeunt&lt;/li&gt;
+&lt;li&gt;Sistere Liriope&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Leto numerumque Perseus pectusque ad Troes siquidem ait ubi vulnera comas,
+ademptis septimus Orithyia ferarum. Neque labare rupe intus illic tela omnes
+sua; extrema resupina habenti miserere! Memorata colle, inventos ipsamque patent
+furialiaque totum peterem iuvenes murmure ordine detrahitur, vix.
+Nisi mutatas steterat addere. Interque tantae fama; imperio et
+expertus profugam perlucentes saepe, Pagasaea confinia, dum. &lt;em&gt;Ignes coma&lt;/em&gt;
+postes, septem, si Pindo, amor ut putes quaeritur, diu.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Crinis pectore, si quo hoc debueram obstat Romani amnesque nato, virentibus
+abstulit: dixit fessusque tantaque temptat. Inveniebantur pedis munera sub
+pedibus annos exhortor sine lactisque a postquam de umeris; quam, humum. Est
+celerem in rogarem Ligurum te aurata timoris subiectaque
+&lt;a href="#"&gt;tubae&lt;/a&gt;) facundia deque; illa populis omnis squalidus
+sidere.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id="float-image-right"&gt;Float Image Right&lt;/h1&gt;
+&lt;p&gt;&lt;img class="image-right image-small" src="https://aleylara.github.io/Papyrus/images/camera.png"/&gt;&lt;/p&gt;
+&lt;p&gt;Deceant posita iuncti, ingens cam, dum nam; iniuria sub fer nostrae ausam Cenaeo
+os Byblis omnia. Nisi mutatas steterat addere. Interque tantae fama; imperio et
+expertus profugam perlucentes saepe, ingens cam, dum nam; iniuria sub fer nostrae ausam Cenaeo
+os Byblis omnia. Nisi mutatas steterat addere. Interque tantae fama Pagasaea confinia, dum. &lt;em&gt;Ignes coma&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Figuram tua nubibus colebat caro. Alcyone inpatiens in morte fractaque prosunt
+sortes, possem non et inde cam taurus avus fluctus tibi, sed animi. Tum lacerum
+illam &lt;strong&gt;Nycteliusque caelo&lt;/strong&gt; elisa nunc, caligine esset et alis terruerat
+&lt;a href="http://ab-insania.io/est-conplexa"&gt;quinque attrahit iungit&lt;/a&gt;. Quibus aurea
+meorum montis ait acceptas, vertitur; enim leti suspirat cuncta sentiet adiuvat.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Lassata quis lapis et tamen inmensos vibrataque&lt;/li&gt;
+&lt;li&gt;Dolor totoque mecam&lt;/li&gt;
+&lt;li&gt;Cam dignus&lt;/li&gt;
+&lt;li&gt;Niseia in choreas sceleratus&lt;/li&gt;
+&lt;li&gt;Vultus pennis at librato coeperat terrae&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id="center-image"&gt;Center Image&lt;/h1&gt;
+&lt;p&gt;&lt;img class="image-center image-large" src="https://aleylara.github.io/Papyrus/images/camera.png"/&gt;
+In sit, ab tum everterit sentit sua semiferos veteres. Ventis et sepulto posse;
+tamen partim metuentior convertor dat ut Teucri color. Clamore vertuntur campus
+Aeolides formamque poscit taurorum &lt;em&gt;rapere&lt;/em&gt; nec vix saepibus capit alto succedat
+digitis Rhodosque. Furtiva vestibus, munera in &lt;strong&gt;hanc pendentiaque cadet&lt;/strong&gt;, sis,
+cras. Dumque ille loqui, est luctus lacriment nostri est adspicio fatis captivis, cam
+nullam capitis ut cunasque inquit? Tenditur et primum AI penitusque ad ranae
+excussit ossibus creatus: Bacche verto, litus veniam! Ille corpora instat nobis
+pars animum dant: vel equos et.&lt;/p&gt;
+&lt;h3 id="embeding-youtube-videos"&gt;Embeding YouTube Videos&lt;/h3&gt;
+&lt;div class="aspect-w-16 aspect-h-9"&gt;
+&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="238" src="https://www.youtube.com/embed/TmWIrBPE6Bc" title="YouTube video player" width="424"&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;In order to have a responsiveness video tumbnail, the &lt;code&gt;&amp;lt;iframe&amp;gt;&lt;/code&gt; tags must be wrapped inside the &lt;code&gt;&amp;lt;div class="aspect-w-16 aspect-h-9"&amp;gt;&amp;lt;/div&amp;gt;&lt;/code&gt; in your markdown file.&lt;/p&gt;</content><category term="Software"></category><category term="CSS"></category><category term="Markdown"></category><category term="Python"></category></entry><entry><title>Veterum dare quibus</title><link href="https://aleylara.github.io/Papyrus/veterum-dare-quibus.html" rel="alternate"></link><published>2022-01-31T00:00:00+11:00</published><updated>2022-01-31T00:00:00+11:00</updated><author><name>Author</name></author><id>tag:aleylara.github.io,2022-01-31:/Papyrus/veterum-dare-quibus.html</id><summary type="html">&lt;p&gt;Lorem markdownum omnes, de cogamque, ventorumque quique de
+et. Tyrios illis bene aperto protegit illuc Achaidas nihil peregit &lt;em&gt;terram
+conveniunt&lt;/em&gt; sublatus! Reppulit quo amore nova videt Diana.&lt;/p&gt;</summary><content type="html">&lt;h1 id="ad-figuras"&gt;Ad figuras&lt;/h1&gt;
+&lt;p&gt;Lorem markdownum Aetna primaque sequeretur vacuam telum columnae vellentem hic
+honore me. Ipsa templa, temeraria, aut ripam potiorque altum signa carina velit
+facilem.
+Formatur ut quaque cura &lt;strong&gt;erat&lt;/strong&gt; bene fraxinus Hectorea prosternite magno lecti
+interrita. Contra spatium spumis? Et et unius annis saevit illi sublimis Graias
+&lt;a href="http://terramopem.org/palmas"&gt;habitatis&lt;/a&gt;.
+Senecta copia invenio &lt;em&gt;ante&lt;/em&gt; illam fetibus lacrimas, non figuras palude, aestu.
+Sit ipsa vellet, amico, fuit flammis caerula armandique sedes summa incingitur
+suis percaluit indicium dixit. Modumque mea nam tenus quod &lt;em&gt;Iason&lt;/em&gt;; molibar
+nemus per minimas discedentem Venus neptem elatumque sint opacas pavefacta
+feruntur. Intellecta hastilia, ad noctis locumque vota dixit Phaethonta, barbam
+ait; excita hospitis pectus dominoque &lt;em&gt;perque quae&lt;/em&gt;!&lt;/p&gt;
+&lt;p&gt;Quoque &lt;em&gt;fulicisque nubes tempora&lt;/em&gt;, deae sententia corpora porrigit Palladias
+funduntur cedit. Transire iusserat et annis
+&lt;a href="http://aesacon-pressa.io/carebis.html"&gt;fortibus&lt;/a&gt;, ad est quod lunaribus erat,
+quis.Lorem markdownum nullique cibis &lt;a href="http://quod.net/"&gt;terras&lt;/a&gt; trunco sustinuit
+vicinia ad haud. Accendit enim aede versabat pariturae semper; quo agat hoc
+quoque modo et pacis mari Laertius quis. Equum enim lurida, &lt;em&gt;aristas&lt;/em&gt; consternantur votisque colloque geminam &lt;strong&gt;ordine
+Nereia&lt;/strong&gt;, dirusque digitis Aeacides licet excessere parvum! Cum dissilit melior
+ne suos positasque, tempore ante, circumspexit indicium.&lt;/p&gt;
+&lt;h1 id="veterum-dare-quibus-sum-lyrae-pariterque-othrys"&gt;Veterum dare quibus sum lyrae pariterque Othrys&lt;/h1&gt;
+&lt;p&gt;Tendunt haut quae, vindexque ex non capillos victa meorum dolor est? Comitemque
+solis miserabilis nostro magis omnes, palaestrae est nequeat; aspicit. Huius
+opus sub fortemque fraudare litora tangentiaque molliet domus vocat. Et
+novissima ultra: macies me his quotiens deus inlaesos rugae simile.&lt;/p&gt;
+&lt;p&gt;Per recenti Iovis qui, laesaque de modus partu: dedit pondere, resolvite ramis
+varas lacrimis? Succrescere tori occupat potentior concitus verbis festinat
+manus sentiet pectore fugit conclamat videt longe nisi defluxere ibimus.&lt;/p&gt;
+&lt;p&gt;Aut fuerat glaebis suis toto pavefacta. Haut caudam: caeli fato mentis Phasias
+harenae cur umbras boves vestigia breve suos pectora feroci, utrimque traxerat.
+Fusus &lt;em&gt;Ganymedis cerva&lt;/em&gt;! Prementem &lt;a href="http://victis-forma.com/"&gt;certe arbor
+numquamque&lt;/a&gt; tamen quam poterit Venerem, Amor legitima
+semina Danai. Equum enim lurida, &lt;em&gt;aristas&lt;/em&gt; consternantur votisque colloque geminam &lt;strong&gt;ordine
+Nereia&lt;/strong&gt;, dirusque digitis Aeacides licet excessere parvum! Cum dissilit melior
+ne suos positasque, tempore ante, circumspexit indicium.&lt;/p&gt;
+&lt;h1 id="regi-suaque-serior-solacia-proavos"&gt;Regi suaque serior solacia proavos&lt;/h1&gt;
+&lt;p&gt;Lorem markdownum nullique cibis &lt;a href="http://quod.net/"&gt;terras&lt;/a&gt; trunco sustinuit
+vicinia ad haud. Accendit enim aede versabat pariturae semper; quo agat hoc
+quoque modo et pacis mari Laertius quis. Equum enim lurida, &lt;em&gt;aristas&lt;/em&gt; consternantur votisque colloque geminam &lt;strong&gt;ordine
+Nereia&lt;/strong&gt;, dirusque digitis Aeacides licet excessere parvum! Cum dissilit melior
+ne suos positasque, tempore ante, circumspexit indicium.&lt;/p&gt;
+&lt;p&gt;Venias &lt;em&gt;duorum&lt;/em&gt;, iste mersum: in regis quam motis mixtaeque queri, pererrant
+deo. Pontus geminas. Memorant exilibus, sum in Troum vero quod maturus traho
+luctor coeptaeque faveas. Ora muneris iam putat Petraei, in &lt;a href="http://quoque.org/meritorum.aspx"&gt;nacta
+oscula&lt;/a&gt;, mox. Numina est produxit summe
+Titania potest?
+Lorem markdownum nullique cibis &lt;a href="http://quod.net/"&gt;terras&lt;/a&gt; trunco sustinuit
+vicinia ad haud. Accendit enim aede versabat pariturae semper; quo agat hoc
+quoque modo et pacis mari Laertius quis. Equum enim lurida, &lt;em&gt;aristas&lt;/em&gt; consternantur votisque colloque geminam &lt;strong&gt;ordine
+Nereia&lt;/strong&gt;, dirusque digitis Aeacides licet excessere parvum! Cum dissilit melior
+ne suos positasque, tempore ante, circumspexit indicium.&lt;/p&gt;
+&lt;h1 id="nec-celeri-damna-in-alis-dum-manerent"&gt;Nec celeri damna in alis dum manerent&lt;/h1&gt;
+&lt;p&gt;Lorem markdownum nullique cibis &lt;a href="http://quod.net/"&gt;terras&lt;/a&gt; trunco sustinuit
+vicinia ad haud. Accendit enim aede versabat pariturae semper; quo agat hoc
+quoque modo et pacis mari Laertius quis. Equum enim lurida, &lt;em&gt;aristas&lt;/em&gt; consternantur votisque colloque geminam &lt;strong&gt;ordine
+Nereia&lt;/strong&gt;, dirusque digitis Aeacides licet excessere parvum! Cum dissilit melior
+ne suos positasque, tempore ante, circumspexit indicium.
+Crimine certa &lt;strong&gt;hanc&lt;/strong&gt; surrexit pars abscedat videri, fuso nomine: timor suos
+adunca, mensis oppugnant opibus: minimam. Vadit abstrahor matri annosa
+&lt;a href="http://www.nitido.io/novae-multae"&gt;frondibus&lt;/a&gt; altera fecerit parantur viderat
+remittis evadere, haut.&lt;/p&gt;
+&lt;p&gt;Equum enim lurida, &lt;em&gt;aristas&lt;/em&gt; consternantur votisque colloque geminam &lt;strong&gt;ordine
+Nereia&lt;/strong&gt;, dirusque digitis Aeacides licet excessere parvum! Cum dissilit melior
+ne suos positasque, tempore ante, circumspexit indicium.&lt;/p&gt;
+&lt;p&gt;Non non altis trahit sucos petit carpens curribus subsidit ipsum, praeferrer.
+Duorum ibitis nescius quorum captatur vana fecundam deserit roges &lt;strong&gt;oppressumque
+subposuere furtisque&lt;/strong&gt; iras vultu clamor. Adhuc tumulus: sed et petuntur leti
+senex miserabile pennis, a auras nec diem Tegeaea acerbo vulnera, est. Vobis
+ipsa uti quarum &lt;a href="http://est-dum.org/matura"&gt;data&lt;/a&gt; nutrit amans cecidisse ardent
+digitis?&lt;/p&gt;</content><category term="Hardware"></category><category term="Web"></category><category term="Mobile"></category><category term="IoT"></category></entry><entry><title>Quam oris regia ne eminus insignia illum</title><link href="https://aleylara.github.io/Papyrus/quam-oris-regia-ne-eminus-insignia-illum.html" rel="alternate"></link><published>2021-12-29T00:00:00+11:00</published><updated>2021-12-29T00:00:00+11:00</updated><author><name>Author</name></author><id>tag:aleylara.github.io,2021-12-29:/Papyrus/quam-oris-regia-ne-eminus-insignia-illum.html</id><summary type="html">&lt;p&gt;Lorem markdownum omnes, de cogamque, ventorumque quique de
+et. Tyrios illis bene aperto protegit illuc Achaidas nihil peregit &lt;em&gt;terram
+conveniunt&lt;/em&gt; sublatus! Reppulit quo amore nova videt Diana.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Iugeribus exhalantem, comitant laedi cornuaque patet nec obscenas dignus; ara
+stravit dubitat de me talibus. &lt;em&gt;Vittisconcutiens et pondere&lt;/em&gt; minuente mandata et
+oscula! Tisiphone et &lt;strong&gt;mediam Coronis&lt;/strong&gt; in cum excitat palmas Doridaque inflata
+olim, et vota praesignia solvi; voce gremio.&lt;/p&gt;
+&lt;p&gt;Dedignata obstitit surrexit super, bicorni viri incedit in erat, terebrata
+insula ex &lt;a href="http://www.amatum-hoc.com/dum-dat"&gt;alpina neu&lt;/a&gt; Hiems maximus? Lignum
+premit adspicit vertice o comae iam est flamma voto flectebat! In equae tabellae
+invadere trahebat ait osculaque in parant attulerat tu refoventque alis medios
+vides dare. Vitam Hebre contigerant abluit &lt;em&gt;populi&lt;/em&gt; est quoque perque: precibus
+illo Nestora sororum ut. Ulixis posset, &lt;a href="http://www.ante.org/"&gt;nomenque&lt;/a&gt; et sub
+Cleonae, &lt;em&gt;ne pater&lt;/em&gt; desuetudine ille; lammina petens pro annum.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dea agrestes&lt;/li&gt;
+&lt;li&gt;Fragor valet desierant&lt;/li&gt;
+&lt;li&gt;Quae et ferre tapetibus dabit mirantibus poscitur&lt;/li&gt;
+&lt;li&gt;Ducum moenia unde&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="est-nova-in-quas-comitata-te-aegre"&gt;Est nova in quas comitata te aegre&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://www.trahunt-harena.net/"&gt;Est altera&lt;/a&gt; sequuntur ex Nereis reliquit
+tigridis; distinguunt latet, sine? Faciemque robora pinguia monedula ante
+cernunt ingratus oblita! Diu cauda ut squamigeris differt &lt;a href="http://fidissimecorpore.io/possesdum"&gt;meque et
+ille&lt;/a&gt; vertice aliter.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Abdiderat imae cum&lt;/li&gt;
+&lt;li&gt;Ipse funere&lt;/li&gt;
+&lt;li&gt;Unda auras putes vectabantur tantaque misit&lt;/li&gt;
+&lt;li&gt;Volucrum cecidit sponte&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Dixit contentusque pectora Hectoreis haerent, deam vocavit, Iuli non undis parce
+fuit, suo muros eo. Tendit preces sacrilegi Stygio est ignes materiam colatur
+deriguit. Hoc silvis, in iacebat, est cura Tres; ira ignava iter penna deus in
+colorem toto anus. Quae bracchia occidit amplectitur procul.&lt;/p&gt;
+&lt;h2 id="hectoreis-haerent"&gt;Hectoreis haerent&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://www.trahunt-harena.net/"&gt;Est altera&lt;/a&gt; sequuntur ex Nereis reliquit
+tigridis; distinguunt latet, sine? Faciemque robora pinguia monedula ante
+cernunt ingratus oblita! Diu cauda ut squamigeris differt &lt;a href="http://fidissimecorpore.io/possesdum"&gt;meque et
+ille&lt;/a&gt; vertice aliter.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Table Header 1&lt;/th&gt;
+&lt;th&gt;Table Header 2&lt;/th&gt;
+&lt;th&gt;Table Header 3&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Dixit contentusque pectora Hectoreis haerent, deam vocavit, Iuli non undis parce
+fuit, suo muros eo. Tendit preces sacrilegi Stygio est ignes materiam colatur
+deriguit. Hoc silvis, in iacebat, est cura Tres; ira ignava iter penna deus in
+colorem toto anus. Quae bracchia occidit amplectitur procul.&lt;/p&gt;</content><category term="Hardware"></category><category term="Web"></category><category term="Mobile"></category><category term="IoT"></category></entry><entry><title>Quique ipso pio</title><link href="https://aleylara.github.io/Papyrus/quique-ipso-pio.html" rel="alternate"></link><published>2021-12-20T00:00:00+11:00</published><updated>2021-12-20T00:00:00+11:00</updated><author><name>Author</name></author><id>tag:aleylara.github.io,2021-12-20:/Papyrus/quique-ipso-pio.html</id><summary type="html">&lt;p&gt;Lorem markdownum omnes, de cogamque, ventorumque quique de
+et. Tyrios illis bene aperto protegit illuc Achaidas nihil peregit &lt;em&gt;terram
+conveniunt&lt;/em&gt; sublatus! Reppulit quo amore nova videt Diana.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Iugeribus exhalantem, comitant laedi cornuaque patet nec obscenas dignus; ara
+stravit dubitat de me talibus. &lt;em&gt;Vittisconcutiens et pondere&lt;/em&gt; minuente mandata et
+oscula! Tisiphone et &lt;strong&gt;mediam Coronis&lt;/strong&gt; in cum excitat palmas Doridaque inflata
+olim, et vota praesignia solvi; voce gremio.&lt;/p&gt;
+&lt;p&gt;Dedignata obstitit surrexit super, bicorni viri incedit in erat, terebrata
+insula ex &lt;a href="http://www.amatum-hoc.com/dum-dat"&gt;alpina neu&lt;/a&gt; Hiems maximus? Lignum
+premit adspicit vertice o comae iam est flamma voto flectebat! In equae tabellae
+invadere trahebat ait osculaque in parant attulerat tu refoventque alis medios
+vides dare. Vitam Hebre contigerant abluit &lt;em&gt;populi&lt;/em&gt; est quoque perque: precibus
+illo Nestora sororum ut. Ulixis posset, &lt;a href="http://www.ante.org/"&gt;nomenque&lt;/a&gt; et sub
+Cleonae, &lt;em&gt;ne pater&lt;/em&gt; desuetudine ille; lammina petens pro annum.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dea agrestes&lt;/li&gt;
+&lt;li&gt;Fragor valet desierant&lt;/li&gt;
+&lt;li&gt;Quae et ferre tapetibus dabit mirantibus poscitur&lt;/li&gt;
+&lt;li&gt;Ducum moenia unde&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="est-nova-in-quas-comitata-te-aegre"&gt;Est nova in quas comitata te aegre&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://www.trahunt-harena.net/"&gt;Est altera&lt;/a&gt; sequuntur ex Nereis reliquit
+tigridis; distinguunt latet, sine? Faciemque robora pinguia monedula ante
+cernunt ingratus oblita! Diu cauda ut squamigeris differt &lt;a href="http://fidissimecorpore.io/possesdum"&gt;meque et
+ille&lt;/a&gt; vertice aliter.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Abdiderat imae cum&lt;/li&gt;
+&lt;li&gt;Ipse funere&lt;/li&gt;
+&lt;li&gt;Unda auras putes vectabantur tantaque misit&lt;/li&gt;
+&lt;li&gt;Volucrum cecidit sponte&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Dixit contentusque pectora Hectoreis haerent, deam vocavit, Iuli non undis parce
+fuit, suo muros eo. Tendit preces sacrilegi Stygio est ignes materiam colatur
+deriguit. Hoc silvis, in iacebat, est cura Tres; ira ignava iter penna deus in
+colorem toto anus. Quae bracchia occidit amplectitur procul.&lt;/p&gt;
+&lt;h2 id="hectoreis-haerent"&gt;Hectoreis haerent&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://www.trahunt-harena.net/"&gt;Est altera&lt;/a&gt; sequuntur ex Nereis reliquit
+tigridis; distinguunt latet, sine? Faciemque robora pinguia monedula ante
+cernunt ingratus oblita! Diu cauda ut squamigeris differt &lt;a href="http://fidissimecorpore.io/possesdum"&gt;meque et
+ille&lt;/a&gt; vertice aliter.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Table Header 1&lt;/th&gt;
+&lt;th&gt;Table Header 2&lt;/th&gt;
+&lt;th&gt;Table Header 3&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Dixit contentusque pectora Hectoreis haerent, deam vocavit, Iuli non undis parce
+fuit, suo muros eo. Tendit preces sacrilegi Stygio est ignes materiam colatur
+deriguit. Hoc silvis, in iacebat, est cura Tres; ira ignava iter penna deus in
+colorem toto anus. Quae bracchia occidit amplectitur procul.&lt;/p&gt;</content><category term="Hardware"></category><category term="Web"></category><category term="Mobile"></category><category term="IoT"></category></entry><entry><title>Acrior dic inconcessisque voco vestes</title><link href="https://aleylara.github.io/Papyrus/acrior-dic-inconcessisque-voco-vestes.html" rel="alternate"></link><published>2021-12-07T00:00:00+11:00</published><updated>2021-12-07T00:00:00+11:00</updated><author><name>Author</name></author><id>tag:aleylara.github.io,2021-12-07:/Papyrus/acrior-dic-inconcessisque-voco-vestes.html</id><summary type="html">&lt;p&gt;Lorem markdownum omnes, de cogamque, ventorumque quique de
+et. Tyrios illis bene aperto protegit illuc Achaidas nihil peregit &lt;em&gt;terram
+conveniunt&lt;/em&gt; sublatus! Reppulit quo amore nova videt Diana.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Iugeribus exhalantem, comitant laedi cornuaque patet nec obscenas dignus; ara
+stravit dubitat de me talibus. &lt;em&gt;Vittisconcutiens et pondere&lt;/em&gt; minuente mandata et
+oscula! Tisiphone et &lt;strong&gt;mediam Coronis&lt;/strong&gt; in cum excitat palmas Doridaque inflata
+olim, et vota praesignia solvi; voce gremio.&lt;/p&gt;
+&lt;p&gt;Dedignata obstitit surrexit super, bicorni viri incedit in erat, terebrata
+insula ex &lt;a href="http://www.amatum-hoc.com/dum-dat"&gt;alpina neu&lt;/a&gt; Hiems maximus? Lignum
+premit adspicit vertice o comae iam est flamma voto flectebat! In equae tabellae
+invadere trahebat ait osculaque in parant attulerat tu refoventque alis medios
+vides dare. Vitam Hebre contigerant abluit &lt;em&gt;populi&lt;/em&gt; est quoque perque: precibus
+illo Nestora sororum ut. Ulixis posset, &lt;a href="http://www.ante.org/"&gt;nomenque&lt;/a&gt; et sub
+Cleonae, &lt;em&gt;ne pater&lt;/em&gt; desuetudine ille; lammina petens pro annum.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dea agrestes&lt;/li&gt;
+&lt;li&gt;Fragor valet desierant&lt;/li&gt;
+&lt;li&gt;Quae et ferre tapetibus dabit mirantibus poscitur&lt;/li&gt;
+&lt;li&gt;Ducum moenia unde&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="est-nova-in-quas-comitata-te-aegre"&gt;Est nova in quas comitata te aegre&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://www.trahunt-harena.net/"&gt;Est altera&lt;/a&gt; sequuntur ex Nereis reliquit
+tigridis; distinguunt latet, sine? Faciemque robora pinguia monedula ante
+cernunt ingratus oblita! Diu cauda ut squamigeris differt &lt;a href="http://fidissimecorpore.io/possesdum"&gt;meque et
+ille&lt;/a&gt; vertice aliter.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Abdiderat imae cum&lt;/li&gt;
+&lt;li&gt;Ipse funere&lt;/li&gt;
+&lt;li&gt;Unda auras putes vectabantur tantaque misit&lt;/li&gt;
+&lt;li&gt;Volucrum cecidit sponte&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Dixit contentusque pectora Hectoreis haerent, deam vocavit, Iuli non undis parce
+fuit, suo muros eo. Tendit preces sacrilegi Stygio est ignes materiam colatur
+deriguit. Hoc silvis, in iacebat, est cura Tres; ira ignava iter penna deus in
+colorem toto anus. Quae bracchia occidit amplectitur procul.&lt;/p&gt;
+&lt;h2 id="hectoreis-haerent"&gt;Hectoreis haerent&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://www.trahunt-harena.net/"&gt;Est altera&lt;/a&gt; sequuntur ex Nereis reliquit
+tigridis; distinguunt latet, sine? Faciemque robora pinguia monedula ante
+cernunt ingratus oblita! Diu cauda ut squamigeris differt &lt;a href="http://fidissimecorpore.io/possesdum"&gt;meque et
+ille&lt;/a&gt; vertice aliter.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Table Header 1&lt;/th&gt;
+&lt;th&gt;Table Header 2&lt;/th&gt;
+&lt;th&gt;Table Header 3&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Dixit contentusque pectora Hectoreis haerent, deam vocavit, Iuli non undis parce
+fuit, suo muros eo. Tendit preces sacrilegi Stygio est ignes materiam colatur
+deriguit. Hoc silvis, in iacebat, est cura Tres; ira ignava iter penna deus in
+colorem toto anus. Quae bracchia occidit amplectitur procul.&lt;/p&gt;</content><category term="Hardware"></category><category term="Web"></category><category term="Mobile"></category><category term="IoT"></category></entry><entry><title>Fixus Calydonius via et me</title><link href="https://aleylara.github.io/Papyrus/fixus-calydonius-via-et-me.html" rel="alternate"></link><published>2021-11-20T00:00:00+11:00</published><updated>2021-11-20T00:00:00+11:00</updated><author><name>Author</name></author><id>tag:aleylara.github.io,2021-11-20:/Papyrus/fixus-calydonius-via-et-me.html</id><summary type="html">&lt;p&gt;Lorem markdownum omnes, de cogamque, ventorumque quique de
+et. Tyrios illis bene aperto protegit illuc Achaidas nihil peregit &lt;em&gt;terram
+conveniunt&lt;/em&gt; sublatus! Reppulit quo amore nova videt Diana.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Iugeribus exhalantem, comitant laedi cornuaque patet nec obscenas dignus; ara
+stravit dubitat de me talibus. &lt;em&gt;Vittisconcutiens et pondere&lt;/em&gt; minuente mandata et
+oscula! Tisiphone et &lt;strong&gt;mediam Coronis&lt;/strong&gt; in cum excitat palmas Doridaque inflata
+olim, et vota praesignia solvi; voce gremio.&lt;/p&gt;
+&lt;p&gt;Dedignata obstitit surrexit super, bicorni viri incedit in erat, terebrata
+insula ex &lt;a href="http://www.amatum-hoc.com/dum-dat"&gt;alpina neu&lt;/a&gt; Hiems maximus? Lignum
+premit adspicit vertice o comae iam est flamma voto flectebat! In equae tabellae
+invadere trahebat ait osculaque in parant attulerat tu refoventque alis medios
+vides dare. Vitam Hebre contigerant abluit &lt;em&gt;populi&lt;/em&gt; est quoque perque: precibus
+illo Nestora sororum ut. Ulixis posset, &lt;a href="http://www.ante.org/"&gt;nomenque&lt;/a&gt; et sub
+Cleonae, &lt;em&gt;ne pater&lt;/em&gt; desuetudine ille; lammina petens pro annum.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dea agrestes&lt;/li&gt;
+&lt;li&gt;Fragor valet desierant&lt;/li&gt;
+&lt;li&gt;Quae et ferre tapetibus dabit mirantibus poscitur&lt;/li&gt;
+&lt;li&gt;Ducum moenia unde&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="est-nova-in-quas-comitata-te-aegre"&gt;Est nova in quas comitata te aegre&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://www.trahunt-harena.net/"&gt;Est altera&lt;/a&gt; sequuntur ex Nereis reliquit
+tigridis; distinguunt latet, sine? Faciemque robora pinguia monedula ante
+cernunt ingratus oblita! Diu cauda ut squamigeris differt &lt;a href="http://fidissimecorpore.io/possesdum"&gt;meque et
+ille&lt;/a&gt; vertice aliter.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Abdiderat imae cum&lt;/li&gt;
+&lt;li&gt;Ipse funere&lt;/li&gt;
+&lt;li&gt;Unda auras putes vectabantur tantaque misit&lt;/li&gt;
+&lt;li&gt;Volucrum cecidit sponte&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Dixit contentusque pectora Hectoreis haerent, deam vocavit, Iuli non undis parce
+fuit, suo muros eo. Tendit preces sacrilegi Stygio est ignes materiam colatur
+deriguit. Hoc silvis, in iacebat, est cura Tres; ira ignava iter penna deus in
+colorem toto anus. Quae bracchia occidit amplectitur procul.&lt;/p&gt;
+&lt;h2 id="hectoreis-haerent"&gt;Hectoreis haerent&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://www.trahunt-harena.net/"&gt;Est altera&lt;/a&gt; sequuntur ex Nereis reliquit
+tigridis; distinguunt latet, sine? Faciemque robora pinguia monedula ante
+cernunt ingratus oblita! Diu cauda ut squamigeris differt &lt;a href="http://fidissimecorpore.io/possesdum"&gt;meque et
+ille&lt;/a&gt; vertice aliter.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Table Header 1&lt;/th&gt;
+&lt;th&gt;Table Header 2&lt;/th&gt;
+&lt;th&gt;Table Header 3&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Dixit contentusque pectora Hectoreis haerent, deam vocavit, Iuli non undis parce
+fuit, suo muros eo. Tendit preces sacrilegi Stygio est ignes materiam colatur
+deriguit. Hoc silvis, in iacebat, est cura Tres; ira ignava iter penna deus in
+colorem toto anus. Quae bracchia occidit amplectitur procul.&lt;/p&gt;</content><category term="Hardware"></category><category term="Web"></category><category term="Mobile"></category><category term="IoT"></category></entry><entry><title>Zonarumque credit</title><link href="https://aleylara.github.io/Papyrus/zonarumque-credit.html" rel="alternate"></link><published>2021-11-01T00:00:00+11:00</published><updated>2021-11-01T00:00:00+11:00</updated><author><name>Author</name></author><id>tag:aleylara.github.io,2021-11-01:/Papyrus/zonarumque-credit.html</id><summary type="html">&lt;p&gt;Lorem markdownum omnes, de cogamque, ventorumque quique de
+et. Tyrios illis bene aperto protegit illuc Achaidas nihil peregit &lt;em&gt;terram
+conveniunt&lt;/em&gt; sublatus! Reppulit quo amore nova videt Diana.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Iugeribus exhalantem, comitant laedi cornuaque patet nec obscenas dignus; ara
+stravit dubitat de me talibus. &lt;em&gt;Vittisconcutiens et pondere&lt;/em&gt; minuente mandata et
+oscula! Tisiphone et &lt;strong&gt;mediam Coronis&lt;/strong&gt; in cum excitat palmas Doridaque inflata
+olim, et vota praesignia solvi; voce gremio.&lt;/p&gt;
+&lt;p&gt;Dedignata obstitit surrexit super, bicorni viri incedit in erat, terebrata
+insula ex &lt;a href="http://www.amatum-hoc.com/dum-dat"&gt;alpina neu&lt;/a&gt; Hiems maximus? Lignum
+premit adspicit vertice o comae iam est flamma voto flectebat! In equae tabellae
+invadere trahebat ait osculaque in parant attulerat tu refoventque alis medios
+vides dare. Vitam Hebre contigerant abluit &lt;em&gt;populi&lt;/em&gt; est quoque perque: precibus
+illo Nestora sororum ut. Ulixis posset, &lt;a href="http://www.ante.org/"&gt;nomenque&lt;/a&gt; et sub
+Cleonae, &lt;em&gt;ne pater&lt;/em&gt; desuetudine ille; lammina petens pro annum.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dea agrestes&lt;/li&gt;
+&lt;li&gt;Fragor valet desierant&lt;/li&gt;
+&lt;li&gt;Quae et ferre tapetibus dabit mirantibus poscitur&lt;/li&gt;
+&lt;li&gt;Ducum moenia unde&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="est-nova-in-quas-comitata-te-aegre"&gt;Est nova in quas comitata te aegre&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://www.trahunt-harena.net/"&gt;Est altera&lt;/a&gt; sequuntur ex Nereis reliquit
+tigridis; distinguunt latet, sine? Faciemque robora pinguia monedula ante
+cernunt ingratus oblita! Diu cauda ut squamigeris differt &lt;a href="http://fidissimecorpore.io/possesdum"&gt;meque et
+ille&lt;/a&gt; vertice aliter.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Abdiderat imae cum&lt;/li&gt;
+&lt;li&gt;Ipse funere&lt;/li&gt;
+&lt;li&gt;Unda auras putes vectabantur tantaque misit&lt;/li&gt;
+&lt;li&gt;Volucrum cecidit sponte&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Dixit contentusque pectora Hectoreis haerent, deam vocavit, Iuli non undis parce
+fuit, suo muros eo. Tendit preces sacrilegi Stygio est ignes materiam colatur
+deriguit. Hoc silvis, in iacebat, est cura Tres; ira ignava iter penna deus in
+colorem toto anus. Quae bracchia occidit amplectitur procul.&lt;/p&gt;
+&lt;h2 id="hectoreis-haerent"&gt;Hectoreis haerent&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://www.trahunt-harena.net/"&gt;Est altera&lt;/a&gt; sequuntur ex Nereis reliquit
+tigridis; distinguunt latet, sine? Faciemque robora pinguia monedula ante
+cernunt ingratus oblita! Diu cauda ut squamigeris differt &lt;a href="http://fidissimecorpore.io/possesdum"&gt;meque et
+ille&lt;/a&gt; vertice aliter.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Table Header 1&lt;/th&gt;
+&lt;th&gt;Table Header 2&lt;/th&gt;
+&lt;th&gt;Table Header 3&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Dixit contentusque pectora Hectoreis haerent, deam vocavit, Iuli non undis parce
+fuit, suo muros eo. Tendit preces sacrilegi Stygio est ignes materiam colatur
+deriguit. Hoc silvis, in iacebat, est cura Tres; ira ignava iter penna deus in
+colorem toto anus. Quae bracchia occidit amplectitur procul.&lt;/p&gt;</content><category term="Hardware"></category><category term="Web"></category><category term="Mobile"></category><category term="IoT"></category></entry><entry><title>Pelopeiadesque facta</title><link href="https://aleylara.github.io/Papyrus/pelopeiadesque-facta.html" rel="alternate"></link><published>2020-12-30T00:00:00+11:00</published><updated>2020-12-30T00:00:00+11:00</updated><author><name>Author</name></author><id>tag:aleylara.github.io,2020-12-30:/Papyrus/pelopeiadesque-facta.html</id><summary type="html">&lt;p&gt;Lorem markdownum omnes, de cogamque, ventorumque quique de
+et. Tyrios illis bene aperto protegit illuc Achaidas nihil peregit &lt;em&gt;terram
+conveniunt&lt;/em&gt; sublatus! Reppulit quo amore nova videt Diana.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Iugeribus exhalantem, comitant laedi cornuaque patet nec obscenas dignus; ara
+stravit dubitat de me talibus. &lt;em&gt;Vittisconcutiens et pondere&lt;/em&gt; minuente mandata et
+oscula! Tisiphone et &lt;strong&gt;mediam Coronis&lt;/strong&gt; in cum excitat palmas Doridaque inflata
+olim, et vota praesignia solvi; voce gremio.&lt;/p&gt;
+&lt;p&gt;Dedignata obstitit surrexit super, bicorni viri incedit in erat, terebrata
+insula ex &lt;a href="http://www.amatum-hoc.com/dum-dat"&gt;alpina neu&lt;/a&gt; Hiems maximus? Lignum
+premit adspicit vertice o comae iam est flamma voto flectebat! In equae tabellae
+invadere trahebat ait osculaque in parant attulerat tu refoventque alis medios
+vides dare. Vitam Hebre contigerant abluit &lt;em&gt;populi&lt;/em&gt; est quoque perque: precibus
+illo Nestora sororum ut. Ulixis posset, &lt;a href="http://www.ante.org/"&gt;nomenque&lt;/a&gt; et sub
+Cleonae, &lt;em&gt;ne pater&lt;/em&gt; desuetudine ille; lammina petens pro annum.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dea agrestes&lt;/li&gt;
+&lt;li&gt;Fragor valet desierant&lt;/li&gt;
+&lt;li&gt;Quae et ferre tapetibus dabit mirantibus poscitur&lt;/li&gt;
+&lt;li&gt;Ducum moenia unde&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="est-nova-in-quas-comitata-te-aegre"&gt;Est nova in quas comitata te aegre&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://www.trahunt-harena.net/"&gt;Est altera&lt;/a&gt; sequuntur ex Nereis reliquit
+tigridis; distinguunt latet, sine? Faciemque robora pinguia monedula ante
+cernunt ingratus oblita! Diu cauda ut squamigeris differt &lt;a href="http://fidissimecorpore.io/possesdum"&gt;meque et
+ille&lt;/a&gt; vertice aliter.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Abdiderat imae cum&lt;/li&gt;
+&lt;li&gt;Ipse funere&lt;/li&gt;
+&lt;li&gt;Unda auras putes vectabantur tantaque misit&lt;/li&gt;
+&lt;li&gt;Volucrum cecidit sponte&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Dixit contentusque pectora Hectoreis haerent, deam vocavit, Iuli non undis parce
+fuit, suo muros eo. Tendit preces sacrilegi Stygio est ignes materiam colatur
+deriguit. Hoc silvis, in iacebat, est cura Tres; ira ignava iter penna deus in
+colorem toto anus. Quae bracchia occidit amplectitur procul.&lt;/p&gt;
+&lt;h2 id="hectoreis-haerent"&gt;Hectoreis haerent&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://www.trahunt-harena.net/"&gt;Est altera&lt;/a&gt; sequuntur ex Nereis reliquit
+tigridis; distinguunt latet, sine? Faciemque robora pinguia monedula ante
+cernunt ingratus oblita! Diu cauda ut squamigeris differt &lt;a href="http://fidissimecorpore.io/possesdum"&gt;meque et
+ille&lt;/a&gt; vertice aliter.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Table Header 1&lt;/th&gt;
+&lt;th&gt;Table Header 2&lt;/th&gt;
+&lt;th&gt;Table Header 3&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Dixit contentusque pectora Hectoreis haerent, deam vocavit, Iuli non undis parce
+fuit, suo muros eo. Tendit preces sacrilegi Stygio est ignes materiam colatur
+deriguit. Hoc silvis, in iacebat, est cura Tres; ira ignava iter penna deus in
+colorem toto anus. Quae bracchia occidit amplectitur procul.&lt;/p&gt;</content><category term="Hardware"></category><category term="Web"></category><category term="Mobile"></category><category term="IoT"></category></entry><entry><title>Vituli cubitique antiquas quot</title><link href="https://aleylara.github.io/Papyrus/vituli-cubitique-antiquas-quot.html" rel="alternate"></link><published>2020-10-03T00:00:00+10:00</published><updated>2020-10-03T00:00:00+10:00</updated><author><name>Author</name></author><id>tag:aleylara.github.io,2020-10-03:/Papyrus/vituli-cubitique-antiquas-quot.html</id><summary type="html">&lt;p&gt;Lorem markdownum omnes, de cogamque, ventorumque quique de
+et. Tyrios illis bene aperto protegit illuc Achaidas nihil peregit &lt;em&gt;terram
+conveniunt&lt;/em&gt; sublatus! Reppulit quo amore nova videt Diana.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Iugeribus exhalantem, comitant laedi cornuaque patet nec obscenas dignus; ara
+stravit dubitat de me talibus. &lt;em&gt;Vittisconcutiens et pondere&lt;/em&gt; minuente mandata et
+oscula! Tisiphone et &lt;strong&gt;mediam Coronis&lt;/strong&gt; in cum excitat palmas Doridaque inflata
+olim, et vota praesignia solvi; voce gremio.&lt;/p&gt;
+&lt;p&gt;Dedignata obstitit surrexit super, bicorni viri incedit in erat, terebrata
+insula ex &lt;a href="http://www.amatum-hoc.com/dum-dat"&gt;alpina neu&lt;/a&gt; Hiems maximus? Lignum
+premit adspicit vertice o comae iam est flamma voto flectebat! In equae tabellae
+invadere trahebat ait osculaque in parant attulerat tu refoventque alis medios
+vides dare. Vitam Hebre contigerant abluit &lt;em&gt;populi&lt;/em&gt; est quoque perque: precibus
+illo Nestora sororum ut. Ulixis posset, &lt;a href="http://www.ante.org/"&gt;nomenque&lt;/a&gt; et sub
+Cleonae, &lt;em&gt;ne pater&lt;/em&gt; desuetudine ille; lammina petens pro annum.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dea agrestes&lt;/li&gt;
+&lt;li&gt;Fragor valet desierant&lt;/li&gt;
+&lt;li&gt;Quae et ferre tapetibus dabit mirantibus poscitur&lt;/li&gt;
+&lt;li&gt;Ducum moenia unde&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="est-nova-in-quas-comitata-te-aegre"&gt;Est nova in quas comitata te aegre&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://www.trahunt-harena.net/"&gt;Est altera&lt;/a&gt; sequuntur ex Nereis reliquit
+tigridis; distinguunt latet, sine? Faciemque robora pinguia monedula ante
+cernunt ingratus oblita! Diu cauda ut squamigeris differt &lt;a href="http://fidissimecorpore.io/possesdum"&gt;meque et
+ille&lt;/a&gt; vertice aliter.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Abdiderat imae cum&lt;/li&gt;
+&lt;li&gt;Ipse funere&lt;/li&gt;
+&lt;li&gt;Unda auras putes vectabantur tantaque misit&lt;/li&gt;
+&lt;li&gt;Volucrum cecidit sponte&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Dixit contentusque pectora Hectoreis haerent, deam vocavit, Iuli non undis parce
+fuit, suo muros eo. Tendit preces sacrilegi Stygio est ignes materiam colatur
+deriguit. Hoc silvis, in iacebat, est cura Tres; ira ignava iter penna deus in
+colorem toto anus. Quae bracchia occidit amplectitur procul.&lt;/p&gt;
+&lt;h2 id="hectoreis-haerent"&gt;Hectoreis haerent&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://www.trahunt-harena.net/"&gt;Est altera&lt;/a&gt; sequuntur ex Nereis reliquit
+tigridis; distinguunt latet, sine? Faciemque robora pinguia monedula ante
+cernunt ingratus oblita! Diu cauda ut squamigeris differt &lt;a href="http://fidissimecorpore.io/possesdum"&gt;meque et
+ille&lt;/a&gt; vertice aliter.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Table Header 1&lt;/th&gt;
+&lt;th&gt;Table Header 2&lt;/th&gt;
+&lt;th&gt;Table Header 3&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Dixit contentusque pectora Hectoreis haerent, deam vocavit, Iuli non undis parce
+fuit, suo muros eo. Tendit preces sacrilegi Stygio est ignes materiam colatur
+deriguit. Hoc silvis, in iacebat, est cura Tres; ira ignava iter penna deus in
+colorem toto anus. Quae bracchia occidit amplectitur procul.&lt;/p&gt;</content><category term="Hardware"></category><category term="Web"></category><category term="Mobile"></category><category term="IoT"></category></entry><entry><title>Luvenem auras umbras</title><link href="https://aleylara.github.io/Papyrus/luvenem-auras-umbras.html" rel="alternate"></link><published>2020-02-02T00:00:00+11:00</published><updated>2020-02-02T00:00:00+11:00</updated><author><name>Author</name></author><id>tag:aleylara.github.io,2020-02-02:/Papyrus/luvenem-auras-umbras.html</id><summary type="html">&lt;p&gt;Lorem markdownum omnes, de cogamque, ventorumque quique de
+et. Tyrios illis bene aperto protegit illuc Achaidas nihil peregit &lt;em&gt;terram
+conveniunt&lt;/em&gt; sublatus! Reppulit quo amore nova videt Diana.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Iugeribus exhalantem, comitant laedi cornuaque patet nec obscenas dignus; ara
+stravit dubitat de me talibus. &lt;em&gt;Vittisconcutiens et pondere&lt;/em&gt; minuente mandata et
+oscula! Tisiphone et &lt;strong&gt;mediam Coronis&lt;/strong&gt; in cum excitat palmas Doridaque inflata
+olim, et vota praesignia solvi; voce gremio.&lt;/p&gt;
+&lt;p&gt;Dedignata obstitit surrexit super, bicorni viri incedit in erat, terebrata
+insula ex &lt;a href="http://www.amatum-hoc.com/dum-dat"&gt;alpina neu&lt;/a&gt; Hiems maximus? Lignum
+premit adspicit vertice o comae iam est flamma voto flectebat! In equae tabellae
+invadere trahebat ait osculaque in parant attulerat tu refoventque alis medios
+vides dare. Vitam Hebre contigerant abluit &lt;em&gt;populi&lt;/em&gt; est quoque perque: precibus
+illo Nestora sororum ut. Ulixis posset, &lt;a href="http://www.ante.org/"&gt;nomenque&lt;/a&gt; et sub
+Cleonae, &lt;em&gt;ne pater&lt;/em&gt; desuetudine ille; lammina petens pro annum.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dea agrestes&lt;/li&gt;
+&lt;li&gt;Fragor valet desierant&lt;/li&gt;
+&lt;li&gt;Quae et ferre tapetibus dabit mirantibus poscitur&lt;/li&gt;
+&lt;li&gt;Ducum moenia unde&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="est-nova-in-quas-comitata-te-aegre"&gt;Est nova in quas comitata te aegre&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://www.trahunt-harena.net/"&gt;Est altera&lt;/a&gt; sequuntur ex Nereis reliquit
+tigridis; distinguunt latet, sine? Faciemque robora pinguia monedula ante
+cernunt ingratus oblita! Diu cauda ut squamigeris differt &lt;a href="http://fidissimecorpore.io/possesdum"&gt;meque et
+ille&lt;/a&gt; vertice aliter.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Abdiderat imae cum&lt;/li&gt;
+&lt;li&gt;Ipse funere&lt;/li&gt;
+&lt;li&gt;Unda auras putes vectabantur tantaque misit&lt;/li&gt;
+&lt;li&gt;Volucrum cecidit sponte&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Dixit contentusque pectora Hectoreis haerent, deam vocavit, Iuli non undis parce
+fuit, suo muros eo. Tendit preces sacrilegi Stygio est ignes materiam colatur
+deriguit. Hoc silvis, in iacebat, est cura Tres; ira ignava iter penna deus in
+colorem toto anus. Quae bracchia occidit amplectitur procul.&lt;/p&gt;
+&lt;h2 id="hectoreis-haerent"&gt;Hectoreis haerent&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://www.trahunt-harena.net/"&gt;Est altera&lt;/a&gt; sequuntur ex Nereis reliquit
+tigridis; distinguunt latet, sine? Faciemque robora pinguia monedula ante
+cernunt ingratus oblita! Diu cauda ut squamigeris differt &lt;a href="http://fidissimecorpore.io/possesdum"&gt;meque et
+ille&lt;/a&gt; vertice aliter.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Table Header 1&lt;/th&gt;
+&lt;th&gt;Table Header 2&lt;/th&gt;
+&lt;th&gt;Table Header 3&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Dixit contentusque pectora Hectoreis haerent, deam vocavit, Iuli non undis parce
+fuit, suo muros eo. Tendit preces sacrilegi Stygio est ignes materiam colatur
+deriguit. Hoc silvis, in iacebat, est cura Tres; ira ignava iter penna deus in
+colorem toto anus. Quae bracchia occidit amplectitur procul.&lt;/p&gt;</content><category term="Software"></category><category term="CSS"></category><category term="Markdown"></category><category term="Python"></category></entry><entry><title>Erat fisa ignavis cornua</title><link href="https://aleylara.github.io/Papyrus/erat-fisa-ignavis-cornua.html" rel="alternate"></link><published>2019-02-28T00:00:00+11:00</published><updated>2019-02-28T00:00:00+11:00</updated><author><name>Author</name></author><id>tag:aleylara.github.io,2019-02-28:/Papyrus/erat-fisa-ignavis-cornua.html</id><summary type="html">&lt;p&gt;Lorem markdownum omnes, de cogamque, ventorumque quique de
+et. Tyrios illis bene aperto protegit illuc Achaidas nihil peregit &lt;em&gt;terram
+conveniunt&lt;/em&gt; sublatus! Reppulit quo amore nova videt Diana.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Iugeribus exhalantem, comitant laedi cornuaque patet nec obscenas dignus; ara
+stravit dubitat de me talibus. &lt;em&gt;Vittisconcutiens et pondere&lt;/em&gt; minuente mandata et
+oscula! Tisiphone et &lt;strong&gt;mediam Coronis&lt;/strong&gt; in cum excitat palmas Doridaque inflata
+olim, et vota praesignia solvi; voce gremio.&lt;/p&gt;
+&lt;p&gt;Dedignata obstitit surrexit super, bicorni viri incedit in erat, terebrata
+insula ex &lt;a href="http://www.amatum-hoc.com/dum-dat"&gt;alpina neu&lt;/a&gt; Hiems maximus? Lignum
+premit adspicit vertice o comae iam est flamma voto flectebat! In equae tabellae
+invadere trahebat ait osculaque in parant attulerat tu refoventque alis medios
+vides dare. Vitam Hebre contigerant abluit &lt;em&gt;populi&lt;/em&gt; est quoque perque: precibus
+illo Nestora sororum ut. Ulixis posset, &lt;a href="http://www.ante.org/"&gt;nomenque&lt;/a&gt; et sub
+Cleonae, &lt;em&gt;ne pater&lt;/em&gt; desuetudine ille; lammina petens pro annum.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dea agrestes&lt;/li&gt;
+&lt;li&gt;Fragor valet desierant&lt;/li&gt;
+&lt;li&gt;Quae et ferre tapetibus dabit mirantibus poscitur&lt;/li&gt;
+&lt;li&gt;Ducum moenia unde&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="est-nova-in-quas-comitata-te-aegre"&gt;Est nova in quas comitata te aegre&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://www.trahunt-harena.net/"&gt;Est altera&lt;/a&gt; sequuntur ex Nereis reliquit
+tigridis; distinguunt latet, sine? Faciemque robora pinguia monedula ante
+cernunt ingratus oblita! Diu cauda ut squamigeris differt &lt;a href="http://fidissimecorpore.io/possesdum"&gt;meque et
+ille&lt;/a&gt; vertice aliter.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Abdiderat imae cum&lt;/li&gt;
+&lt;li&gt;Ipse funere&lt;/li&gt;
+&lt;li&gt;Unda auras putes vectabantur tantaque misit&lt;/li&gt;
+&lt;li&gt;Volucrum cecidit sponte&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Dixit contentusque pectora Hectoreis haerent, deam vocavit, Iuli non undis parce
+fuit, suo muros eo. Tendit preces sacrilegi Stygio est ignes materiam colatur
+deriguit. Hoc silvis, in iacebat, est cura Tres; ira ignava iter penna deus in
+colorem toto anus. Quae bracchia occidit amplectitur procul.&lt;/p&gt;
+&lt;h2 id="hectoreis-haerent"&gt;Hectoreis haerent&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://www.trahunt-harena.net/"&gt;Est altera&lt;/a&gt; sequuntur ex Nereis reliquit
+tigridis; distinguunt latet, sine? Faciemque robora pinguia monedula ante
+cernunt ingratus oblita! Diu cauda ut squamigeris differt &lt;a href="http://fidissimecorpore.io/possesdum"&gt;meque et
+ille&lt;/a&gt; vertice aliter.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Table Header 1&lt;/th&gt;
+&lt;th&gt;Table Header 2&lt;/th&gt;
+&lt;th&gt;Table Header 3&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Dixit contentusque pectora Hectoreis haerent, deam vocavit, Iuli non undis parce
+fuit, suo muros eo. Tendit preces sacrilegi Stygio est ignes materiam colatur
+deriguit. Hoc silvis, in iacebat, est cura Tres; ira ignava iter penna deus in
+colorem toto anus. Quae bracchia occidit amplectitur procul.&lt;/p&gt;</content><category term="Software"></category><category term="CSS"></category><category term="Markdown"></category><category term="Python"></category><category term="AI"></category></entry><entry><title>Terram cultro omnes</title><link href="https://aleylara.github.io/Papyrus/terram-cultro-omnes.html" rel="alternate"></link><published>2019-02-02T00:00:00+11:00</published><updated>2019-02-02T00:00:00+11:00</updated><author><name>Author</name></author><id>tag:aleylara.github.io,2019-02-02:/Papyrus/terram-cultro-omnes.html</id><summary type="html">&lt;p&gt;Lorem markdownum omnes, de cogamque, ventorumque quique de
+et. Tyrios illis bene aperto protegit illuc Achaidas nihil peregit &lt;em&gt;terram
+conveniunt&lt;/em&gt; sublatus! Reppulit quo amore nova videt Diana.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Iugeribus exhalantem, comitant laedi cornuaque patet nec obscenas dignus; ara
+stravit dubitat de me talibus. &lt;em&gt;Vittisconcutiens et pondere&lt;/em&gt; minuente mandata et
+oscula! Tisiphone et &lt;strong&gt;mediam Coronis&lt;/strong&gt; in cum excitat palmas Doridaque inflata
+olim, et vota praesignia solvi; voce gremio.&lt;/p&gt;
+&lt;p&gt;Dedignata obstitit surrexit super, bicorni viri incedit in erat, terebrata
+insula ex &lt;a href="http://www.amatum-hoc.com/dum-dat"&gt;alpina neu&lt;/a&gt; Hiems maximus? Lignum
+premit adspicit vertice o comae iam est flamma voto flectebat! In equae tabellae
+invadere trahebat ait osculaque in parant attulerat tu refoventque alis medios
+vides dare. Vitam Hebre contigerant abluit &lt;em&gt;populi&lt;/em&gt; est quoque perque: precibus
+illo Nestora sororum ut. Ulixis posset, &lt;a href="http://www.ante.org/"&gt;nomenque&lt;/a&gt; et sub
+Cleonae, &lt;em&gt;ne pater&lt;/em&gt; desuetudine ille; lammina petens pro annum.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dea agrestes&lt;/li&gt;
+&lt;li&gt;Fragor valet desierant&lt;/li&gt;
+&lt;li&gt;Quae et ferre tapetibus dabit mirantibus poscitur&lt;/li&gt;
+&lt;li&gt;Ducum moenia unde&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="est-nova-in-quas-comitata-te-aegre"&gt;Est nova in quas comitata te aegre&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://www.trahunt-harena.net/"&gt;Est altera&lt;/a&gt; sequuntur ex Nereis reliquit
+tigridis; distinguunt latet, sine? Faciemque robora pinguia monedula ante
+cernunt ingratus oblita! Diu cauda ut squamigeris differt &lt;a href="http://fidissimecorpore.io/possesdum"&gt;meque et
+ille&lt;/a&gt; vertice aliter.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Abdiderat imae cum&lt;/li&gt;
+&lt;li&gt;Ipse funere&lt;/li&gt;
+&lt;li&gt;Unda auras putes vectabantur tantaque misit&lt;/li&gt;
+&lt;li&gt;Volucrum cecidit sponte&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Dixit contentusque pectora Hectoreis haerent, deam vocavit, Iuli non undis parce
+fuit, suo muros eo. Tendit preces sacrilegi Stygio est ignes materiam colatur
+deriguit. Hoc silvis, in iacebat, est cura Tres; ira ignava iter penna deus in
+colorem toto anus. Quae bracchia occidit amplectitur procul.&lt;/p&gt;
+&lt;h2 id="hectoreis-haerent"&gt;Hectoreis haerent&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://www.trahunt-harena.net/"&gt;Est altera&lt;/a&gt; sequuntur ex Nereis reliquit
+tigridis; distinguunt latet, sine? Faciemque robora pinguia monedula ante
+cernunt ingratus oblita! Diu cauda ut squamigeris differt &lt;a href="http://fidissimecorpore.io/possesdum"&gt;meque et
+ille&lt;/a&gt; vertice aliter.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Table Header 1&lt;/th&gt;
+&lt;th&gt;Table Header 2&lt;/th&gt;
+&lt;th&gt;Table Header 3&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Dixit contentusque pectora Hectoreis haerent, deam vocavit, Iuli non undis parce
+fuit, suo muros eo. Tendit preces sacrilegi Stygio est ignes materiam colatur
+deriguit. Hoc silvis, in iacebat, est cura Tres; ira ignava iter penna deus in
+colorem toto anus. Quae bracchia occidit amplectitur procul.&lt;/p&gt;</content><category term="Software"></category><category term="CSS"></category><category term="Markdown"></category><category term="Python"></category><category term="AI"></category></entry><entry><title>Licet orbes ibat parvi obliquo Vulneribus variusque formam aquosae</title><link href="https://aleylara.github.io/Papyrus/licet-orbes-ibat-parvi-obliquo-vulneribus-variusque-formam-aquosae.html" rel="alternate"></link><published>2019-02-01T00:00:00+11:00</published><updated>2019-02-01T00:00:00+11:00</updated><author><name>Author</name></author><id>tag:aleylara.github.io,2019-02-01:/Papyrus/licet-orbes-ibat-parvi-obliquo-vulneribus-variusque-formam-aquosae.html</id><summary type="html">&lt;p&gt;Lorem markdownum omnes, de cogamque, ventorumque quique de
+et. Tyrios illis bene aperto protegit illuc Achaidas nihil peregit &lt;em&gt;terram
+conveniunt&lt;/em&gt; sublatus! Reppulit quo amore nova videt Diana.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Iugeribus exhalantem, comitant laedi cornuaque patet nec obscenas dignus; ara
+stravit dubitat de me talibus. &lt;em&gt;Vittisconcutiens et pondere&lt;/em&gt; minuente mandata et
+oscula! Tisiphone et &lt;strong&gt;mediam Coronis&lt;/strong&gt; in cum excitat palmas Doridaque inflata
+olim, et vota praesignia solvi; voce gremio.&lt;/p&gt;
+&lt;p&gt;Dedignata obstitit surrexit super, bicorni viri incedit in erat, terebrata
+insula ex &lt;a href="http://www.amatum-hoc.com/dum-dat"&gt;alpina neu&lt;/a&gt; Hiems maximus? Lignum
+premit adspicit vertice o comae iam est flamma voto flectebat! In equae tabellae
+invadere trahebat ait osculaque in parant attulerat tu refoventque alis medios
+vides dare. Vitam Hebre contigerant abluit &lt;em&gt;populi&lt;/em&gt; est quoque perque: precibus
+illo Nestora sororum ut. Ulixis posset, &lt;a href="http://www.ante.org/"&gt;nomenque&lt;/a&gt; et sub
+Cleonae, &lt;em&gt;ne pater&lt;/em&gt; desuetudine ille; lammina petens pro annum.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dea agrestes&lt;/li&gt;
+&lt;li&gt;Fragor valet desierant&lt;/li&gt;
+&lt;li&gt;Quae et ferre tapetibus dabit mirantibus poscitur&lt;/li&gt;
+&lt;li&gt;Ducum moenia unde&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="est-nova-in-quas-comitata-te-aegre"&gt;Est nova in quas comitata te aegre&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://www.trahunt-harena.net/"&gt;Est altera&lt;/a&gt; sequuntur ex Nereis reliquit
+tigridis; distinguunt latet, sine? Faciemque robora pinguia monedula ante
+cernunt ingratus oblita! Diu cauda ut squamigeris differt &lt;a href="http://fidissimecorpore.io/possesdum"&gt;meque et
+ille&lt;/a&gt; vertice aliter.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Abdiderat imae cum&lt;/li&gt;
+&lt;li&gt;Ipse funere&lt;/li&gt;
+&lt;li&gt;Unda auras putes vectabantur tantaque misit&lt;/li&gt;
+&lt;li&gt;Volucrum cecidit sponte&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Dixit contentusque pectora Hectoreis haerent, deam vocavit, Iuli non undis parce
+fuit, suo muros eo. Tendit preces sacrilegi Stygio est ignes materiam colatur
+deriguit. Hoc silvis, in iacebat, est cura Tres; ira ignava iter penna deus in
+colorem toto anus. Quae bracchia occidit amplectitur procul.&lt;/p&gt;
+&lt;h2 id="hectoreis-haerent"&gt;Hectoreis haerent&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://www.trahunt-harena.net/"&gt;Est altera&lt;/a&gt; sequuntur ex Nereis reliquit
+tigridis; distinguunt latet, sine? Faciemque robora pinguia monedula ante
+cernunt ingratus oblita! Diu cauda ut squamigeris differt &lt;a href="http://fidissimecorpore.io/possesdum"&gt;meque et
+ille&lt;/a&gt; vertice aliter.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Table Header 1&lt;/th&gt;
+&lt;th&gt;Table Header 2&lt;/th&gt;
+&lt;th&gt;Table Header 3&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Dixit contentusque pectora Hectoreis haerent, deam vocavit, Iuli non undis parce
+fuit, suo muros eo. Tendit preces sacrilegi Stygio est ignes materiam colatur
+deriguit. Hoc silvis, in iacebat, est cura Tres; ira ignava iter penna deus in
+colorem toto anus. Quae bracchia occidit amplectitur procul.&lt;/p&gt;</content><category term="Software"></category><category term="CSS"></category><category term="Markdown"></category><category term="Python"></category></entry></feed>
