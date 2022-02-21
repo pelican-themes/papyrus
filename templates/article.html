@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% block html_lang %}{{ article.lang }}{% endblock %}
+{% block head -%}
+{{ super() -}}
+{% if article.summary %}
+<meta name="description" content="{{ article.summary | striptags | safe | truncate(150) }}" />
+{% endif %}
+{% endblock %}
+{% block title %}{{ article.title|striptags }}{% endblock %}
+{% block extra_head %}
+{% import 'translations.html' as translations with context %}
+{% if translations.entry_hreflang(article) %}
+{{ translations.entry_hreflang(article) }}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<main>
+  <header>
+    <h1 class="font-semibold text-3xl my-2">{{article.title}}</h1>
+    <footer class="flex text-sm text-zinc-800 dark:text-zinc-400">
+      <div class="flex text-xs text-zinc-800 dark:text-zinc-400">
+        <time>{{ article.date|strftime('%B %d, %Y') }}</time>
+        <div>
+          {% if article.readtime %}
+          <span>&nbsp;·&nbsp;{{ article.readtime }} min read</span>
+          {% endif %}
+        </div>
+        <div>
+          {% if article.author != '' %}
+          <span>&nbsp;·&nbsp;{{ article.author }}</span>
+          {% endif %}
+        </div>
+      </div>
+    </footer>
+    {% if article.modified %}
+    <div class="flex text-xs text-zinc-800 dark:text-zinc-400">
+      <span>Last updated: {{ article.modified|strftime('%B %d, %Y') }}</span>
+    </div>
+    {% endif %}
+  </header>
+  {% if article.toc %}
+  <details class="flex flex-col my-6 p-4 bg-zinc-200 dark:bg-zinc-800 rounded-lg">
+    <summary class="text-lg font-bold">Table of contents</summary>
+    <div class="mx-4 px-4 underline">
+      {{ article.toc }}
+    </div>
+  </details>
+  {% endif %}
+  <div class="max-w-7xl container mx-auto my-8 text-zinc-800 dark:text-zinc-300  
+              prose lg:max-w-none prose-headings:text-zinc-800 prose-headings:dark:text-zinc-300 
+              prose-h1:text-3xl lg:prose-h1:text-3xl prose-headings:font-semibold 
+              prose-pre:bg-zinc-200 prose-pre:text-zinc-800
+              dark:prose-pre:bg-zinc-800 dark:prose-pre:text-zinc-200
+              prose-blockquote:text-zinc-800
+              dark:prose-blockquote:text-zinc-200
+              prose-a:text-gray-500
+              dark:prose-a:text-gray-400
+              dark:prose-strong:text-zinc-200 
+              dark:prose-code:text-zinc-200
+              dark:prose-code:bg-zinc-800
+              prose-code:bg-zinc-200
+              prose-code:font-light
+              prose-img:rounded-md
+              ">
+    {{ article.content }}
+    <!-- <div class="aspect-w-16 aspect-h-9 mx-auto"></div> CSS placeholder -->
+  </div>
+  <footer class="flex flex-col mt-10 ">
+    <ul class="flex flex-wrap">
+      {% for tag in article.tags|sort %}
+      <a href="{{ SITEURL }}/{{ tag.url }}">
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-500 dark:text-neutral-400 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          {{ tag }}
+        </li>
+      </a>
+      {% endfor %}
+    </ul>
+    <div class="flex w-full my-2 bg-zinc-200 dark:bg-zinc-700 rounded-lg">
+      {% if article.next_article %}
+      <div class="w-1/2 hover:bg-zinc-300 dark:hover:bg-zinc-800 rounded-l-lg">
+        <a class="flex flex-col pr-2" href="{{ SITEURL }}/{{ article.next_article.url }}">
+          <div class="mx-4 py-2 text-left">
+            <p class="text-zinc-500 dark:text-neutral-400 text-sm">« PREV PAGE</p>
+            <p class="text-left py-1 hover:underline">{{ article.next_article.title }}</p>
+          </div>
+        </a>
+      </div>
+      {% else %}
+      <div class="w-1/2 rounded-l-lg"></div>
+      {% endif %}
+      {% if article.prev_article %}
+      <div class="w-1/2 hover:bg-zinc-300 dark:hover:bg-zinc-800 rounded-r-lg ">
+        <a class="flex flex-col" href="{{ SITEURL }}/{{ article.prev_article.url }}">
+          <div class="text-right mx-4 py-2">
+            <p class="text-zinc-500 dark:text-neutral-400 text-sm">NEXT PAGE »</p>
+            <p class="text-right py-1 hover:underline">{{ article.prev_article.title }}</p>
+          </div>
+        </a>
+      </div>
+      {% endif %}
+    </div>
+    <div class="flex bg-zinc-200 dark:bg-zinc-700 py-2 rounded-lg justify-center space-x-2 text-xs">
+      {% for name, link in SHARE %}
+      <ul>
+        <a target="_blank" rel="noopener noreferrer" title="{{ name }}" aria-label="share Features on {{ name }}"
+          href="{{ link }}{{ SITEURL }}/{{ article.url }}">
+          <li class="bg-gray-900 p-1 text-white rounded-md">
+            <i class="fab fa-{{ name }} fa-2x" aria-hidden="true"></i>
+          </li>
+        </a>
+      </ul>
+      {% endfor %}
+    </div>
+  </footer>
+  <div>
+    {% include 'disqus_script.html' %}
+  </div>
+</main>
+
+{% endblock %}

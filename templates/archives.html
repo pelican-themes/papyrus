@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block title %}Archive | {{ SITENAME }}{% endblock %}
+{% set current = "archive" %}
+
+{% macro countyear(year) %}
+    {% set name = namespace(y=0) %}
+    {% for article in dates %}
+        {% if article.date | strftime('%Y') == year %}
+            {% set name.y = name.y + 1 %}
+        {% endif %}
+    {% endfor %}
+    {{name.y}}
+{% endmacro %}
+
+{% macro countmonth(month, year) %}
+    {% set name = namespace(m=0) %}
+    {% for article in dates %}
+        {% if article.date | strftime('%B') == month and article.date | strftime('%Y') == year %}
+            {% set name.m = name.m + 1 %}
+        {% endif %}
+    {% endfor %}
+    {{name.m}}
+{% endmacro %}
+
+{% block content %}
+
+<div class="md:mt-14 text-zinc-800 dark:text-zinc-300 pb-6">
+    <h1 class="font-bold text-4xl my-10">Archive</h1>
+    <ul class=" flex-col">
+        {% for year, year_group in dates_page.object_list|groupby('date.year')|reverse %}
+        {% for month, month_group in year_group|groupby('date.month')|reverse %}
+        {% for article in month_group %}
+            {% if article == month_group[0] and article == year_group[0] %}
+        <h3 class="text-2xl font-semibold my-8">{{(month_group|first).date|strftime('%Y')}}
+            <sup class="text-sm text-zinc-800 dark:text-zinc-400">
+                {{ countyear(article.date | strftime('%Y')) }}
+            </sup>
+        </h3>
+        <div class="md:flex my-1">
+            <time class="text-xl font-semibold flex mt-6 md:mt-2 md:w-40">{{ (month_group|first).date|strftime('%B') }}
+                <sup class="text-sm m-1 text-zinc-800 dark:text-zinc-400">
+                    {{ countmonth(article.date | strftime('%B'), article.date | strftime('%Y')) }}
+                </sup>
+            </time>
+            <a href="{{ SITEURL }}/{{ article.url }}">
+                <li class="flex-1 md:mt-2"><span class="text-lg">{{ article.title}}</span><br>
+                    <div class="flex text-xs text-zinc-800 dark:text-zinc-400">
+                        <time>{{ article.date|strftime('%B %d, %Y') }}</time>
+                        <div>
+                            {% if article.readtime %}
+                            <span>&nbsp;·&nbsp;{{ article.readtime }} min read</span>
+                            {% endif %}
+                        </div>
+                        <div>
+                            {% if article.author != '' %}
+                            <span>&nbsp;·&nbsp;{{ article.author }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </li>
+            </a>
+        </div>
+        {% elif article == month_group[0] %}
+        <div class="md:flex mt-3">
+            <time class="text-xl font-semibold flex mt-6 md:mt-2 md:w-40">{{ (month_group|first).date|strftime('%B') }}
+                <sup class="text-sm m-1 text-zinc-800 dark:text-zinc-400">
+                    {{ countmonth(article.date | strftime('%B'), article.date | strftime('%Y')) }}
+                </sup>
+            </time>
+            <a href="{{ SITEURL }}/{{ article.url }}">
+                <li class="flex-1 md:mt-2"><span class="text-lg">{{ article.title}}</span><br>
+                    <div class="flex text-xs text-zinc-800 dark:text-zinc-400">
+                        <time>{{ article.date|strftime('%B %d, %Y') }}</time>
+                        <div>
+                            {% if article.readtime %}
+                            <span>&nbsp;·&nbsp;{{ article.readtime }} min read</span>
+                            {% endif %}
+                        </div>
+                        <div>
+                            {% if article.author != '' %}
+                            <span>&nbsp;·&nbsp;{{ article.author }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </li>
+            </a>
+        </div>
+        {% else %}
+        <div class="md:flex">
+            <time class="flex md:w-40"></time>
+            <a href="{{ SITEURL }}/{{ article.url }}">
+                <li class="flex-1 md:mt-2 mt-1"><span class="text-lg">{{ article.title}}</span><br>
+                    <div class="flex text-xs text-zinc-800 dark:text-zinc-400">
+                        <time>{{ article.date|strftime('%B %d, %Y') }}</time>
+                        <div>
+                            {% if article.readtime %}
+                            <span>&nbsp;·&nbsp;{{ article.readtime }} min read</span>
+                            {% endif %}
+                        </div>
+                        <div>
+                            {% if article.author != '' %}
+                            <span>&nbsp;·&nbsp;{{ article.author }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </li>
+            </a>
+        </div>
+            {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% endfor %}
+    </ul>
+</div>
+{% if dates_page.has_other_pages() %}
+    {% include 'pagination.html' %}
+{% endif %}
+
+{% endblock %}

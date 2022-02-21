@@ -1,0 +1,24 @@
+{
+  "name": "peli-paper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "dev": "TAILWIND_MODE=WATCH postcss tailwind.css -o ./static/css/main.css --watch --verbose",
+    "prod": "NODE_ENV=production postcss tailwind.css -o ./static/css/main.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.0",
+    "autoprefixer": "^10.4.2",
+    "cssnano": "^5.0.13",
+    "postcss": "^8.4.5",
+    "postcss-cli": "^9.1.0",
+    "tailwindcss": "^3.0.13"
+  },
+  "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.0"
+  }
+}

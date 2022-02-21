@@ -1,0 +1,20 @@
+{% if DEFAULT_PAGINATION %}
+{% set first_page = articles_paginator.page(1) %}
+{% set last_page = articles_paginator.page(articles_paginator.num_pages) %}
+<div class="relative h-12 mt-3">
+    {% if articles_page.has_previous() %}
+    <a href="{{ SITEURL }}/{{ articles_previous_page.url }}">
+        <button
+            class="bg-zinc-800 dark:bg-zinc-300 rounded-full py-2.5 px-4 text-zinc-100 dark:text-zinc-800  font-medium text-xs absolute left-0">
+            &laquo; Prev Page
+        </button></a>
+    {% endif %}
+    {% if articles_page.has_next() %}
+    <a href="{{ SITEURL }}/{{ articles_next_page.url }}">
+        <button
+            class="bg-zinc-800 dark:bg-zinc-300 rounded-full py-2.5 px-4 text-zinc-100 dark:text-zinc-800 font-medium text-xs absolute right-0">
+            Next Page &raquo;
+        </button></a>
+    {% endif %}
+</div>
+{% endif %}

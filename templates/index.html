@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% block content_title %}
+{% if not category and not tag %}
+<div class="my-12 md:my-24 text-zinc-800 dark:text-zinc-300">
+  {% if SUBTITLE %}
+  <h1 class="mb-6 text-3xl font-bold">{{ SUBTITLE }}</h1>
+  {%endif%}
+  {%if SUBTEXT %}
+    <p class="mb-8 text-zinc-500 dark:text-zinc-400"> {{ SUBTEXT }}</p>
+  {% endif %}
+  {% if SOCIAL or FEED_ALL_ATOM or FEED_ALL_RSS %}
+  <ul class="flex px-2 space-x-4 text-lg">
+    {% for name, link in SOCIAL %}
+    <li><a href="{{ link }}"><i class="fab fa-{{ name }} fa-lg" aria-hidden="true" target="_blank"
+          rel="noopener noreferrer" title="{{ name }}"></i></a></li>
+    {% endfor %}
+    {% if FEED_ALL_ATOM %}
+    <li><a href="{{ FEED_DOMAIN }}/
+                        {% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}"
+        type="application/atom+xml" title="{{ FEED_ALL_ATOM }}" rel="alternate"><i class="fa fa-rss fa-lg"
+          aria-hidden="true"></i></a>
+    </li>
+    {% endif %}
+    {% if FEED_ALL_RSS %}
+    <li><a href="{{ FEED_DOMAIN }}/
+                        {% if FEED_ALL_RSS_URL %}{{ FEED_ALL_RSS_URL }}{% else %}{{ FEED_ALL_RSS }}{% endif %}"
+        type="application/rss+xml" title="{{ FEED_ALL_RSS }}" rel="alternate"><i class="fa fa-rss fa-lg"
+          aria-hidden="true"></i></a>
+    </li>
+    {% endif %}
+  </ul>
+  {% endif %}
+</div>
+{% endif %}
+{% endblock %}
+
+<div class="py-1">
+  <ul>
+    {% for article in articles_page.object_list %}
+    <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">
+      <li class="transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+        <div class="bg-white dark:bg-zinc-800 p-4 md:p-6 mb-4 rounded-lg">
+          <header class="font-semibold text-2xl mb-2">
+            <h1>{{ article.title }}</h1>
+          </header>
+          <div class="max-w-7xl container mx-auto my-4 justify-center overflow-hidden mb-2 text-sm text-zinc-800 dark:text-zinc-400
+          prose lg:max-w-none prose-headings:text-zinc-800 prose-headings:dark:text-zinc-300 
+          prose-h1:text-3xl prose-headings:font-semibold 
+          prose-pre:bg-zinc-200 prose-pre:text-zinc-800
+          dark:prose-pre:bg-zinc-800 dark:prose-pre:text-zinc-200
+          prose-blockquote:text-zinc-800
+          dark:prose-blockquote:text-zinc-200
+          prose-a:text-gray-500
+          dark:prose-a:text-gray-400
+          dark:prose-strong:text-zinc-200 
+          dark:prose-code:text-zinc-200
+          dark:prose-code:bg-zinc-800
+          prose-code:bg-zinc-200
+          prose-code:font-light
+          prose-img:rounded-md
+          ">
+            {{ article.summary }}
+          </div>
+          <div class="flex text-xs text-zinc-800 dark:text-zinc-400">
+            <time>{{ article.date|strftime('%B %d, %Y') }}</time>
+            <div>
+              {% if article.readtime %}
+                <span>&nbsp;·&nbsp;{{ article.readtime }} min read</span>
+              {% endif %}
+            </div>
+            <div>
+              {% if article.author != '' %}
+                <span>&nbsp;·&nbsp;{{ article.author }}</span>
+              {% endif %}
+            </div>
+          </div>
+      </li>
+    </a>
+    {% endfor %}
+  </ul>
+</div>
+{% if articles_page.has_other_pages() %}
+  {% include 'pagination.html' %}
+{% endif %}
+
+{% endblock content %}

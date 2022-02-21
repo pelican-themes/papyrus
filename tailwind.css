@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    /* Disable mobile browser tap background highlight */
+    -webkit-tap-highlight-color: transparent;
+}
+
+#toc ul li {
+    /* Table of contents styling */
+    list-style-type: disc;
+}
+
+.image-thumbnail  {
+    @apply sm:w-1/6 shadow-md;
+}
+
+.image-small {
+    @apply sm:w-1/3 shadow-md;
+}
+
+.image-medium {
+    @apply sm:w-1/2 shadow-md;
+}
+
+.image-large {
+    @apply w-full h-full shadow-md;
+}
+
+.image-left {
+    @apply sm:float-left mr-5;
+}
+
+.image-right {
+    @apply sm:float-right sm:ml-5;
+}
+
+.image-center {
+    @apply mx-auto;
+}

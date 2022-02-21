@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}{{ SITENAME }} | Categories{% endblock %}
+{% set current = "categories" %}
+
+{% block content %}
+
+<div class="mb-12 md:mt-14 text-zinc-800 dark:text-zinc-300">
+    <h1 class="font-bold text-4xl my-10">Categories</h1>
+    <ul class="flex flex-wrap font-medium">
+        {% for category, articles in categories|sort %}
+        <a href="{{ SITEURL }}/{{ category.url }}">
+            <li
+                class="bg-zinc-300 dark:bg-neutral-700 text-zinc-800 dark:text-zinc-300 hover:bg-zinc-400 dark:hover:bg-zinc-800 m-2 py-2 px-2 md:px-4 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+                {{ category }}<sup class="p-1">{{ articles|count }}</sup></li>
+        </a>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}
