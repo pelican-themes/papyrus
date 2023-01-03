@@ -243,10 +243,12 @@
             }
         });
     </script>
+    {% if current == "search" %}
     <script src="https://files.stork-search.net/releases/v1.4.0/stork.js"></script>
     <script>
         stork.register("sitesearch", "{{ SITEURL }}/search-index.st")
     </script>
+    {% endif %}
 </body>
 
 </html>
