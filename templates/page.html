@@ -27,6 +27,7 @@
         {{ page.content }}
         <!-- <div class="aspect-w-16 aspect-h-9 mx-auto"></div> CSS placeholder -->
     </div>
+    {% if SHARE %}
     <footer class="flex bg-zinc-200 dark:bg-zinc-700 mt-10 py-2 rounded-lg justify-center space-x-2 text-xs">
         {% for name, link in SHARE %}
         <ul>
@@ -39,6 +40,7 @@
         </ul>
         {% endfor %}
     </footer>
+    {% endif %}
     <div>
         {% include 'disqus_script.html' %}
     </div>
