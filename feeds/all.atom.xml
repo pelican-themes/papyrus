@@ -9,7 +9,7 @@ $ pip install pelican-neighbors
 $ pip install pelican-readtime
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Create two directories &lt;code&gt;themes&lt;/code&gt; and &lt;code&gt;pelican-plugins&lt;/code&gt; inside the root level of your project. Clone the Papyrus theme inside the &lt;code&gt;themes&lt;/code&gt; directory that you created.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; myBlog
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; myBlog 
 $ mkdir themes
 $ &lt;span class="nb"&gt;cd&lt;/span&gt; themes
 $ git clone https://github.com/aleylara/Papyrus.git
