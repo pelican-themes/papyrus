@@ -18,6 +18,7 @@ $ pip install pelican-readtime
 Create two directories `themes` and `pelican-plugins` inside the root level of your project. Clone the Papyrus theme inside the `themes` directory that you created.
 
 ```bash 
+$ cd myBlog
 $ mkdir themes
 $ cd themes
 $ git clone https://github.com/aleylara/Papyrus.git
@@ -47,7 +48,7 @@ This is the `pelicanconf.py` settings file for the demo site, please change valu
 ```python
 AUTHOR = 'Author'
 SITENAME = 'Papyrus'
-SITEURL = 'https://aleylara.github.io/Papyrus/'
+SITEURL = 'http://localhost:8000'
 TIMEZONE = 'Australia/Sydney'
 DEFAULT_LANG = 'en'
 
@@ -201,6 +202,7 @@ Then run the development server that watches for your changed tailwind classes i
 
 ```bash
 # Initial installation of packages
+$ cd themes/Papyrus
 $ npm install
 
 # JIT compiled main.css
