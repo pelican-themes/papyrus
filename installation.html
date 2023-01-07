@@ -137,7 +137,8 @@ $ pip install pelican-neighbors
 $ pip install pelican-readtime
 </code></pre></div>
 <p>Create two directories <code>themes</code> and <code>pelican-plugins</code> inside the root level of your project. Clone the Papyrus theme inside the <code>themes</code> directory that you created.</p>
-<div class="highlight"><pre><span></span><code>$ mkdir themes
+<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> myBlog
+$ mkdir themes
 $ <span class="nb">cd</span> themes
 $ git clone https://github.com/aleylara/Papyrus.git
 </code></pre></div>
@@ -158,7 +159,7 @@ $ cargo install stork-search --locked
 <p>This is the <code>pelicanconf.py</code> settings file for the demo site, please change values to meet your needs.</p>
 <div class="highlight"><pre><span></span><code><span class="n">AUTHOR</span> <span class="o">=</span> <span class="s1">'Author'</span>
 <span class="n">SITENAME</span> <span class="o">=</span> <span class="s1">'Papyrus'</span>
-<span class="n">SITEURL</span> <span class="o">=</span> <span class="s1">'https://aleylara.github.io/Papyrus/'</span>
+<span class="n">SITEURL</span> <span class="o">=</span> <span class="s1">'http://localhost:8000'</span>
 <span class="n">TIMEZONE</span> <span class="o">=</span> <span class="s1">'Australia/Sydney'</span>
 <span class="n">DEFAULT_LANG</span> <span class="o">=</span> <span class="s1">'en'</span>
 
@@ -290,6 +291,7 @@ Alternatively you could use inline styling.
 <p>If you would like to make any local changes, tailwindcss configuration files are included with the theme. First go into the Papyrus directory and install missing packages with <code>npm install</code>.
 Then run the development server that watches for your changed tailwind classes inside the templates folder and updates <code>main.css</code> on the go.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Initial installation of packages</span>
+$ <span class="nb">cd</span> themes/Papyrus
 $ npm install
 
 <span class="c1"># JIT compiled main.css</span>
@@ -419,10 +421,6 @@ $ npm run dev
                 }
             }
         });
-    </script>
-    <script src="https://files.stork-search.net/releases/v1.4.0/stork.js"></script>
-    <script>
-        stork.register("sitesearch", "https://aleylara.github.io/Papyrus/search-index.st")
     </script>
 </body>
 

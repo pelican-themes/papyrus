@@ -9,7 +9,8 @@ $ pip install pelican-neighbors
 $ pip install pelican-readtime
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Create two directories &lt;code&gt;themes&lt;/code&gt; and &lt;code&gt;pelican-plugins&lt;/code&gt; inside the root level of your project. Clone the Papyrus theme inside the &lt;code&gt;themes&lt;/code&gt; directory that you created.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ mkdir themes
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; myBlog
+$ mkdir themes
 $ &lt;span class="nb"&gt;cd&lt;/span&gt; themes
 $ git clone https://github.com/aleylara/Papyrus.git
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -30,7 +31,7 @@ $ cargo install stork-search --locked
 &lt;p&gt;This is the &lt;code&gt;pelicanconf.py&lt;/code&gt; settings file for the demo site, please change values to meet your needs.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;AUTHOR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'Author'&lt;/span&gt;
 &lt;span class="n"&gt;SITENAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'Papyrus'&lt;/span&gt;
-&lt;span class="n"&gt;SITEURL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'https://aleylara.github.io/Papyrus/'&lt;/span&gt;
+&lt;span class="n"&gt;SITEURL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'http://localhost:8000'&lt;/span&gt;
 &lt;span class="n"&gt;TIMEZONE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'Australia/Sydney'&lt;/span&gt;
 &lt;span class="n"&gt;DEFAULT_LANG&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'en'&lt;/span&gt;
 
@@ -162,6 +163,7 @@ Alternatively you could use inline styling.
 &lt;p&gt;If you would like to make any local changes, tailwindcss configuration files are included with the theme. First go into the Papyrus directory and install missing packages with &lt;code&gt;npm install&lt;/code&gt;.
 Then run the development server that watches for your changed tailwind classes inside the templates folder and updates &lt;code&gt;main.css&lt;/code&gt; on the go.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Initial installation of packages&lt;/span&gt;
+$ &lt;span class="nb"&gt;cd&lt;/span&gt; themes/Papyrus
 $ npm install
 
 &lt;span class="c1"&gt;# JIT compiled main.css&lt;/span&gt;
