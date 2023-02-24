@@ -4,7 +4,9 @@
 <head>
     {% block head %}
     <meta charset="utf-8" />
-    <base href="{{ SITEURL }}/">
+    {% if SITEURL %}
+        <base href="{{ SITEURL }}/">
+    {% endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content="Pelican" />
     <title>{% block title %} {{ SITENAME }} {% endblock %}</title>
