@@ -194,6 +194,9 @@
   color: hsl(0, 0%, 45%);
   border-radius: 15%;
   line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .stork-close-button svg {
