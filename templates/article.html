@@ -104,7 +104,7 @@
     </div>
     {% if SHARE %}
     <div class="flex bg-zinc-200 dark:bg-zinc-700 py-2 rounded-lg justify-center space-x-2 text-xs">
-      {% for name, link in SHARE %}
+      {% for name, link in SHARE|sort %}
       <ul>
         <a target="_blank" rel="noopener noreferrer" title="{{ name }}" aria-label="share Features on {{ name }}"
           href="{{ link }}{{ SITEURL }}/{{ article.url }}">
