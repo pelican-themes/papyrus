@@ -4,28 +4,28 @@ The theme is inspired by Hugo-PaperMod. It is styled using Tailwind CSS.&lt;/p&g
 &lt;p&gt;A fast and responsive theme built for the &lt;a href="https://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; site generator. The theme is inspired by &lt;a href="https://github.com/adityatelange/hugo-PaperMod"&gt;Hugo-PaperMod&lt;/a&gt;. It is styled using &lt;a href="https://tailwindcss.com/"&gt;Tailwind CSS&lt;/a&gt;. It supports dark mode and built in search function. &lt;/p&gt;
 &lt;h3 id="installation"&gt;Installation&lt;/h3&gt;
 &lt;p&gt;The theme requires the &lt;a href="https://github.com/pelican-plugins/search"&gt;pelican-search&lt;/a&gt;, &lt;a href="https://github.com/pelican-plugins/neighbors"&gt;pelican-neighbors&lt;/a&gt;, &lt;a href="https://github.com/JenkinsDev/pelican-readtime"&gt;pelican-readtime&lt;/a&gt; and &lt;a href="https://github.com/ingwinlu/pelican-toc"&gt;pelican-toc&lt;/a&gt; plugins. First three plugins can be installed using &lt;code&gt;pip&lt;/code&gt;. Pelican-toc will be installed manually. We will also need &lt;a href="https://stork-search.net/"&gt;stork&lt;/a&gt; and &lt;code&gt;beautifulsoup4&lt;/code&gt; as dependencies.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ pip install pelican-search
-$ pip install pelican-neighbors
-$ pip install pelican-readtime
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;pip&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;pelican-search
+$&lt;span class="w"&gt; &lt;/span&gt;pip&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;pelican-neighbors
+$&lt;span class="w"&gt; &lt;/span&gt;pip&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;pelican-readtime
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Create two directories &lt;code&gt;themes&lt;/code&gt; and &lt;code&gt;pelican-plugins&lt;/code&gt; inside the root level of your project. Clone the Papyrus theme inside the &lt;code&gt;themes&lt;/code&gt; directory that you created.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; myBlog 
-$ mkdir themes
-$ &lt;span class="nb"&gt;cd&lt;/span&gt; themes
-$ git clone https://github.com/aleylara/Papyrus.git
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;myBlog&lt;span class="w"&gt; &lt;/span&gt;
+$&lt;span class="w"&gt; &lt;/span&gt;mkdir&lt;span class="w"&gt; &lt;/span&gt;themes
+$&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;themes
+$&lt;span class="w"&gt; &lt;/span&gt;git&lt;span class="w"&gt; &lt;/span&gt;clone&lt;span class="w"&gt; &lt;/span&gt;https://github.com/aleylara/Papyrus.git
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Now clone the pelican-toc plugin repo (not available via pip) into your pelican-plugins directory and install &lt;code&gt;beautifulsoup4&lt;/code&gt; that is required by this plugin.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ mkdir pelican-plugins
-$ &lt;span class="nb"&gt;cd&lt;/span&gt; pelican-plugins
-$ git clone https://github.com/ingwinlu/pelican-toc.git
-$ pip install beautifulsoup4
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;mkdir&lt;span class="w"&gt; &lt;/span&gt;pelican-plugins
+$&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;pelican-plugins
+$&lt;span class="w"&gt; &lt;/span&gt;git&lt;span class="w"&gt; &lt;/span&gt;clone&lt;span class="w"&gt; &lt;/span&gt;https://github.com/ingwinlu/pelican-toc.git
+$&lt;span class="w"&gt; &lt;/span&gt;pip&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;beautifulsoup4
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Papyrus theme is already setup for your search functionality. However you will still need to have the &lt;code&gt;stork&lt;/code&gt; package installed in your operating system. Verify &lt;a href="https://stork-search.net/"&gt;stork&lt;/a&gt; is in your path by &lt;code&gt;stork -h&lt;/code&gt; otherwise go ahead and install it.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Install using Homebrew&lt;/span&gt;
-$ brew install stork-search/stork-tap/stork
+$&lt;span class="w"&gt; &lt;/span&gt;brew&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;stork-search/stork-tap/stork
 
 &lt;span class="c1"&gt;# Install using the Rust toolchain and install Stork with Cargo &lt;/span&gt;
-$ cargo install stork-search --locked
+$&lt;span class="w"&gt; &lt;/span&gt;cargo&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;stork-search&lt;span class="w"&gt; &lt;/span&gt;--locked
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id="settings"&gt;Settings&lt;/h3&gt;
 &lt;p&gt;This is the &lt;code&gt;pelicanconf.py&lt;/code&gt; settings file for the demo site, please change values to meet your needs.&lt;/p&gt;
@@ -111,36 +111,36 @@ Summary: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignis
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Articles created inside directory named &lt;code&gt;pages&lt;/code&gt; will have a separate static page and a direct link similar to the &lt;code&gt;About&lt;/code&gt; page in the demo.&lt;/p&gt;
 &lt;p&gt;You can now run the development server and visit the &lt;code&gt;http://localhost:8000&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; myBlog
-$ pelican --autoreload --listen --ignore-cache
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;myBlog
+$&lt;span class="w"&gt; &lt;/span&gt;pelican&lt;span class="w"&gt; &lt;/span&gt;--autoreload&lt;span class="w"&gt; &lt;/span&gt;--listen&lt;span class="w"&gt; &lt;/span&gt;--ignore-cache
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Final project directory structure should look similar to this. &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ &lt;span class="o"&gt;(&lt;/span&gt;pelican&lt;span class="o"&gt;)&lt;/span&gt; ➜ myProject tree
-&amp;boxvr;&amp;boxh;&amp;boxh; myBlog
-&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxvr;&amp;boxh;&amp;boxh; content
-&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxvr;&amp;boxh;&amp;boxh; images
-&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxur;&amp;boxh;&amp;boxh; camera.png
-&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxvr;&amp;boxh;&amp;boxh; pages
-&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;   &amp;boxvr;&amp;boxh;&amp;boxh; about.md
-&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;   &amp;boxur;&amp;boxh;&amp;boxh; events.md
-&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxvr;&amp;boxh;&amp;boxh; Hardware
-&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;   &amp;boxvr;&amp;boxh;&amp;boxh; article-one.md
-&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;   &amp;boxur;&amp;boxh;&amp;boxh; article-two.md
-&amp;boxv;   &amp;boxv; &amp;nbsp;&amp;nbsp;&amp;boxur;&amp;boxh;&amp;boxh; Software
-&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;&amp;nbsp;&amp;nbsp;     &amp;boxvr;&amp;boxh;&amp;boxh; article-three.md
-&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;&amp;nbsp;&amp;nbsp;     &amp;boxur;&amp;boxh;&amp;boxh; article-four.md
-&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxvr;&amp;boxh;&amp;boxh; Makefile
-&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxvr;&amp;boxh;&amp;boxh; output
-&amp;boxv;   &amp;boxv;
-&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxvr;&amp;boxh;&amp;boxh; pelicanconf.py
-&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxvr;&amp;boxh;&amp;boxh; pelican-plugins
-&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxur;&amp;boxh;&amp;boxh; pelican-toc
-&amp;boxv;   &amp;boxv;
-&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxvr;&amp;boxh;&amp;boxh; publishconf.py
-&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxvr;&amp;boxh;&amp;boxh; tasks.py
-&amp;boxv;&amp;nbsp;&amp;nbsp; &amp;boxur;&amp;boxh;&amp;boxh; themes
-&amp;boxv;&amp;nbsp;&amp;nbsp;     &amp;boxur;&amp;boxh;&amp;boxh; Papyrus
-&amp;boxur;&amp;boxh;&amp;boxh; venv
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;pelican&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;➜&lt;span class="w"&gt; &lt;/span&gt;myProject&lt;span class="w"&gt; &lt;/span&gt;tree
+&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;myBlog
+&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;content
+&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;images
+&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxur;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;camera.png
+&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;pages
+&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;about.md
+&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxur;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;events.md
+&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;Hardware
+&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;article-one.md
+&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxur;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;article-two.md
+&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt; &amp;nbsp;&amp;nbsp;&lt;/span&gt;&amp;boxur;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;Software
+&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp;     &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;article-three.md
+&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp;     &lt;/span&gt;&amp;boxur;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;article-four.md
+&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;Makefile
+&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;output
+&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxv;
+&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;pelicanconf.py
+&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;pelican-plugins
+&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxur;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;pelican-toc
+&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxv;
+&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;publishconf.py
+&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;tasks.py
+&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxur;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;themes
+&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp;     &lt;/span&gt;&amp;boxur;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;Papyrus
+&amp;boxur;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;venv
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id="image-size-and-placement"&gt;Image size and placement&lt;/h3&gt;
 &lt;p&gt;Images can be placed on page by adding a custom class names such as &lt;code&gt;image-left&lt;/code&gt;, &lt;code&gt;image-right&lt;/code&gt;, &lt;code&gt;image-center&lt;/code&gt; in your markdown.&lt;/p&gt;
@@ -163,11 +163,11 @@ Alternatively you could use inline styling.
 &lt;p&gt;If you would like to make any local changes, tailwindcss configuration files are included with the theme. First go into the Papyrus directory and install missing packages with &lt;code&gt;npm install&lt;/code&gt;.
 Then run the development server that watches for your changed tailwind classes inside the templates folder and updates &lt;code&gt;main.css&lt;/code&gt; on the go.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Initial installation of packages&lt;/span&gt;
-$ &lt;span class="nb"&gt;cd&lt;/span&gt; themes/Papyrus
-$ npm install
+$&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;themes/Papyrus
+$&lt;span class="w"&gt; &lt;/span&gt;npm&lt;span class="w"&gt; &lt;/span&gt;install
 
 &lt;span class="c1"&gt;# JIT compiled main.css&lt;/span&gt;
-$ npm run dev
+$&lt;span class="w"&gt; &lt;/span&gt;npm&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;dev
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Software"></category><category term="Web"></category><category term="Mobile"></category></entry><entry><title>Image sizing and placement</title><link href="https://aleylara.github.io/Papyrus/image-sizing-and-placement.html" rel="alternate"></link><published>2022-02-11T00:00:00+11:00</published><updated>2022-02-11T00:00:00+11:00</updated><author><name>Author</name></author><id>tag:aleylara.github.io,2022-02-11:/Papyrus/image-sizing-and-placement.html</id><summary type="html">&lt;p&gt;Peli-Papyrus tries to make image placement and sizing a little bit easier when generating your articles.
 It includes built in custom classes that you can make use of directly in your Markdowns.&lt;/p&gt;</summary><content type="html">&lt;h1 id="float-image-left"&gt;Float Image Left&lt;/h1&gt;
 &lt;p&gt;&lt;img class="image-small image-left" src="https://aleylara.github.io/Papyrus/images/camera.png"/&gt;
