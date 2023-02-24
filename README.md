@@ -196,6 +196,14 @@ In order to have a responsiveness video tumbnail, the `<iframe>` tags must be wr
 </div>
 ```
 
+### Linking to template files
+In order to link to files such as `search.html` from markdown file.
+
+```markdown
+[search page](search.html)
+```
+
+
 ### Tailwind CSS
 If you would like to make any local changes, tailwindcss configuration files are included with the theme. First go into the Papyrus directory and install missing packages with `npm install`.
 Then run the development server that watches for your changed tailwind classes inside the templates folder and updates `main.css` on the go.
