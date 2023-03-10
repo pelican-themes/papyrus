@@ -9,13 +9,13 @@
   <h1 class="mb-6 text-3xl font-bold">{{ SUBTITLE }}</h1>
   {%endif%}
   {%if SUBTEXT %}
-    <p class="mb-8 text-zinc-500 dark:text-zinc-400"> {{ SUBTEXT }}</p>
+  <p class="mb-8 text-zinc-600 dark:text-zinc-400"> {{ SUBTEXT }}</p>
   {% endif %}
   {% if SOCIAL or FEED_ALL_ATOM or FEED_ALL_RSS %}
   <ul class="flex px-2 space-x-4 text-lg">
     {% for name, link in SOCIAL %}
-    <li><a href="{{ link }}"><i class="fab fa-{{ name }} fa-lg" aria-hidden="true" target="_blank"
-          rel="noopener noreferrer" title="{{ name }}"></i></a></li>
+    <li><a href="{{ link }}" target="_blank" rel="noopener noreferrer" title="{{ name|capitalize}}"
+        aria-label="{{ name|capitalize }}"><i class="fab fa-{{ name }} fa-lg"></i></a></li>
     {% endfor %}
     {% if FEED_ALL_ATOM %}
     <li><a href="{{ FEED_DOMAIN }}/
@@ -40,8 +40,8 @@
 <div class="py-1">
   <ul>
     {% for article in articles_page.object_list %}
-    <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">
-      <li class="transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+    <li class="transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+      <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">
         <div class="bg-white dark:bg-zinc-800 p-4 md:p-6 mb-4 rounded-lg">
           <header class="font-semibold text-2xl mb-2">
             <h1>{{ article.title }}</h1>
@@ -68,22 +68,22 @@
             <time>{{ article.date|strftime('%B %d, %Y') }}</time>
             <div>
               {% if article.readtime %}
-                <span>&nbsp;·&nbsp;{{ article.readtime }} min read</span>
+              <span>&nbsp;·&nbsp;{{ article.readtime }} min read</span>
               {% endif %}
             </div>
             <div>
               {% if article.author != '' %}
-                <span>&nbsp;·&nbsp;{{ article.author }}</span>
+              <span>&nbsp;·&nbsp;{{ article.author }}</span>
               {% endif %}
             </div>
           </div>
-      </li>
-    </a>
+      </a>
+    </li>
     {% endfor %}
   </ul>
 </div>
 {% if articles_page.has_other_pages() %}
-  {% include 'pagination.html' %}
+{% include 'pagination.html' %}
 {% endif %}
 
 {% endblock content %}

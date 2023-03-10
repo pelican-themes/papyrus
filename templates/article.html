@@ -55,8 +55,8 @@
               dark:prose-pre:bg-zinc-800 dark:prose-pre:text-zinc-200
               prose-blockquote:text-zinc-800
               dark:prose-blockquote:text-zinc-200
-              prose-a:text-gray-500
-              dark:prose-a:text-gray-400
+              prose-a:text-slate-600 prose-a:font-normal
+              dark:prose-a:text-slate-400
               dark:prose-strong:text-zinc-200 
               dark:prose-code:text-zinc-200
               dark:prose-code:bg-zinc-800
@@ -70,12 +70,10 @@
   <footer class="flex flex-col mt-10 ">
     <ul class="flex flex-wrap">
       {% for tag in article.tags|sort %}
-      <a href="{{ SITEURL }}/{{ tag.url }}">
         <li
-          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-500 dark:text-neutral-400 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
-          {{ tag }}
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
         </li>
-      </a>
       {% endfor %}
     </ul>
     <div class="flex w-full my-2 bg-zinc-200 dark:bg-zinc-700 rounded-lg">
@@ -83,7 +81,7 @@
       <div class="w-1/2 hover:bg-zinc-300 dark:hover:bg-zinc-800 rounded-l-lg">
         <a class="flex flex-col pr-2" href="{{ SITEURL }}/{{ article.next_article.url }}">
           <div class="mx-4 py-2 text-left">
-            <p class="text-zinc-500 dark:text-neutral-400 text-sm">« PREV PAGE</p>
+            <p class="text-zinc-600 dark:text-zinc-300 text-sm">« PREV PAGE</p>
             <p class="text-left py-1 hover:underline">{{ article.next_article.title }}</p>
           </div>
         </a>
@@ -95,7 +93,7 @@
       <div class="w-1/2 hover:bg-zinc-300 dark:hover:bg-zinc-800 rounded-r-lg ">
         <a class="flex flex-col" href="{{ SITEURL }}/{{ article.prev_article.url }}">
           <div class="text-right mx-4 py-2">
-            <p class="text-zinc-500 dark:text-neutral-400 text-sm">NEXT PAGE »</p>
+            <p class="text-zinc-600 dark:text-zinc-300 text-sm">NEXT PAGE »</p>
             <p class="text-right py-1 hover:underline">{{ article.prev_article.title }}</p>
           </div>
         </a>
@@ -106,12 +104,12 @@
     <div class="flex bg-zinc-200 dark:bg-zinc-700 py-2 rounded-lg justify-center space-x-2 text-xs">
       {% for name, link in SHARE %}
       <ul>
-        <a target="_blank" rel="noopener noreferrer" title="{{ name }}" aria-label="share Features on {{ name }}"
-          href="{{ link }}{{ SITEURL }}/{{ article.url }}">
-          <li class="bg-gray-900 p-1 text-white rounded-md">
+        <li class="bg-gray-900 p-1 text-white rounded-md">
+          <a target="_blank" rel="noopener noreferrer" title="{{ name }}" aria-label="share Features on {{ name }}"
+            href="{{ link }}{{ SITEURL }}/{{ article.url }}">
             <i class="fab fa-{{ name }} fa-2x" aria-hidden="true"></i>
-          </li>
-        </a>
+          </a>
+        </li>
       </ul>
       {% endfor %}
     </div>
