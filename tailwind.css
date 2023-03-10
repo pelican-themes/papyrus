@@ -39,3 +39,9 @@ html {
 .image-center {
     @apply mx-auto;
 }
+p a {
+    @apply text-slate-600 dark:text-slate-400 underline;   
+}
+p a {
+    @layer font-normal;
+}
