@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Papyrus</title><link href="https://aleylara.github.io/Papyrus/" rel="alternate"></link><link href="https://aleylara.github.io/Papyrus/feeds/all.atom.xml" rel="self"></link><id>https://aleylara.github.io/Papyrus/</id><updated>2022-02-12T00:00:00+11:00</updated><entry><title>Installation</title><link href="https://aleylara.github.io/Papyrus/installation.html" rel="alternate"></link><published>2022-02-12T00:00:00+11:00</published><updated>2022-02-12T00:00:00+11:00</updated><author><name>Author</name></author><id>tag:aleylara.github.io,2022-02-12:/Papyrus/installation.html</id><summary type="html">&lt;p&gt;Papyrus is a lightweight theme for the Pelican static site generator.
-The theme is inspired by Hugo-PaperMod. It is styled using Tailwind CSS.&lt;/p&gt;</summary><content type="html">&lt;h1 id="papyrus"&gt;Papyrus&lt;/h1&gt;
+The theme is inspired by Hugo-PaperMod. It is styled using Tailwind CSS.&lt;/p&gt;</summary><content type="html">&lt;h2 id="papyrus"&gt;Papyrus&lt;/h2&gt;
 &lt;p&gt;A fast and responsive theme built for the &lt;a href="https://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; site generator. The theme is inspired by &lt;a href="https://github.com/adityatelange/hugo-PaperMod"&gt;Hugo-PaperMod&lt;/a&gt;. It is styled using &lt;a href="https://tailwindcss.com/"&gt;Tailwind CSS&lt;/a&gt;. It supports dark mode and built in search function. &lt;/p&gt;
 &lt;h3 id="installation"&gt;Installation&lt;/h3&gt;
 &lt;p&gt;The theme requires the &lt;a href="https://github.com/pelican-plugins/search"&gt;pelican-search&lt;/a&gt;, &lt;a href="https://github.com/pelican-plugins/neighbors"&gt;pelican-neighbors&lt;/a&gt;, &lt;a href="https://github.com/JenkinsDev/pelican-readtime"&gt;pelican-readtime&lt;/a&gt; and &lt;a href="https://github.com/ingwinlu/pelican-toc"&gt;pelican-toc&lt;/a&gt; plugins. First three plugins can be installed using &lt;code&gt;pip&lt;/code&gt;. Pelican-toc will be installed manually. We will also need &lt;a href="https://stork-search.net/"&gt;stork&lt;/a&gt; and &lt;code&gt;beautifulsoup4&lt;/code&gt; as dependencies.&lt;/p&gt;
@@ -31,17 +31,15 @@ $&lt;span class="w"&gt; &lt;/span&gt;cargo&lt;span class="w"&gt; &lt;/span&gt;in
 &lt;p&gt;This is the &lt;code&gt;pelicanconf.py&lt;/code&gt; settings file for the demo site, please change values to meet your needs.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;AUTHOR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'Author'&lt;/span&gt;
 &lt;span class="n"&gt;SITENAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'Papyrus'&lt;/span&gt;
-&lt;span class="n"&gt;SITEURL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'http://localhost:8000'&lt;/span&gt;
+&lt;span class="n"&gt;SITEURL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'http://127.0.0.1:8000'&lt;/span&gt;
 &lt;span class="n"&gt;TIMEZONE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'Australia/Sydney'&lt;/span&gt;
 &lt;span class="n"&gt;DEFAULT_LANG&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'en'&lt;/span&gt;
 
 &lt;span class="n"&gt;SUBTITLE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'Papyrus'&lt;/span&gt;
-&lt;span class="n"&gt;SUBTEXT&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'''A fast and responsive theme built for the &amp;lt;a class="underline" &lt;/span&gt;
-&lt;span class="s1"&gt;href="https://blog.getpelican.com/"&amp;gt;Pelican&amp;lt;/a&amp;gt; site generator.&amp;lt;br&amp;gt;&lt;/span&gt;
-&lt;span class="s1"&gt;The theme is inspired by &amp;lt;a class="underline" &lt;/span&gt;
-&lt;span class="s1"&gt;href="https://github.com/adityatelange/hugo-PaperMod"&amp;gt;Hugo-PaperMod&amp;lt;/a&amp;gt;. &lt;/span&gt;
-&lt;span class="s1"&gt;It is styled using &amp;lt;a class="underline" &lt;/span&gt;
-&lt;span class="s1"&gt;href="https://tailwindcss.com/"&amp;gt;Tailwind CSS&amp;lt;/a&amp;gt;. &lt;/span&gt;
+&lt;span class="n"&gt;SUBTEXT&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'''A fast and responsive theme built for the &lt;/span&gt;
+&lt;span class="s1"&gt;&amp;lt;a href="https://blog.getpelican.com/"&amp;gt;Pelican&amp;lt;/a&amp;gt; site generator.&amp;lt;br&amp;gt;&lt;/span&gt;
+&lt;span class="s1"&gt;The theme is inspired by &amp;lt;a href="https://github.com/adityatelange/hugo-PaperMod"&amp;gt;Hugo-PaperMod&amp;lt;/a&amp;gt;. &lt;/span&gt;
+&lt;span class="s1"&gt;It is styled using &amp;lt;a href="https://tailwindcss.com/"&amp;gt;Tailwind CSS&amp;lt;/a&amp;gt;. &lt;/span&gt;
 &lt;span class="s1"&gt;It supports dark mode and built in search function.&lt;/span&gt;
 &lt;span class="s1"&gt;'''&lt;/span&gt;
 &lt;span class="n"&gt;COPYRIGHT&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'&amp;copy;2022'&lt;/span&gt;
@@ -50,10 +48,18 @@ $&lt;span class="w"&gt; &lt;/span&gt;cargo&lt;span class="w"&gt; &lt;/span&gt;in
 &lt;span class="n"&gt;THEME_STATIC_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'static'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;PLUGIN_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'pelican-plugins'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'readtime'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'search'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'neighbors'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'pelican-toc'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-
+&lt;span class="n"&gt;STATIC_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+    &lt;span class="s1"&gt;'images'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;'images/favicon.ico'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;'extra/robots.txt'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;EXTRA_PATH_METADATA&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="s1"&gt;'extra/robots.txt'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'path'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'robots.txt'&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="s1"&gt;'images/favicon.ico'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'path'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'favicon.ico'&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;span class="n"&gt;DISPLAY_PAGES_ON_MENU&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
 &lt;span class="n"&gt;DIRECT_TEMPLATES&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s1"&gt;'index'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'search'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'tags'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'categories'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'archives'&lt;/span&gt;&lt;span class="p"&gt;,))&lt;/span&gt;
-&lt;span class="n"&gt;PAGINATED_TEMPLATES&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'index'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'tag'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'category'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'author'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'archives'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;24&lt;/span&gt;&lt;span class="p"&gt;,}&lt;/span&gt;
+&lt;span class="n"&gt;PAGINATED_TEMPLATES&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'index'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'tag'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'category'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'author'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'archives'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;24&lt;/span&gt;&lt;span class="p"&gt;,}&lt;/span&gt;
 
 &lt;span class="c1"&gt;# Site search plugin&lt;/span&gt;
 &lt;span class="n"&gt;SEARCH_MODE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"output"&lt;/span&gt;
@@ -102,7 +108,7 @@ $&lt;span class="w"&gt; &lt;/span&gt;cargo&lt;span class="w"&gt; &lt;/span&gt;in
 &lt;span class="c1"&gt;# GOOGLE_ANALYTICS = ''&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id="generate-articles"&gt;Generate Articles&lt;/h3&gt;
-&lt;p&gt;A sample article header is below. Adding a &lt;code&gt;Summary&lt;/code&gt; field is highly recommended. It substitutes as the article decription and gets added into html &lt;code&gt;&amp;lt;meta name="description" content="..."&amp;gt;&lt;/code&gt;. Summaries are also used in blog's home page. They help to keep similar height article previews without titles, images or code blocks.&lt;/p&gt;
+&lt;p&gt;A sample article header is below. Adding a &lt;code&gt;Summary&lt;/code&gt; field is highly recommended. It substitutes as the article description and gets added into html &lt;code&gt;&amp;lt;meta name="description" content="..."&amp;gt;&lt;/code&gt;. Summaries are also used in blog's home page. They help to keep similar height article previews without titles, images or code blocks.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Title: Installation
 Date: 2021-12-14
 Tags: CSS, Markdown, Python, AI
@@ -117,29 +123,32 @@ $&lt;span class="w"&gt; &lt;/span&gt;pelican&lt;span class="w"&gt; &lt;/span&gt;
 &lt;p&gt;Final project directory structure should look similar to this. &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;pelican&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;➜&lt;span class="w"&gt; &lt;/span&gt;myProject&lt;span class="w"&gt; &lt;/span&gt;tree
 &amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;myBlog
-&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;content
-&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;images
-&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxur;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;camera.png
-&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;pages
-&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;about.md
-&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxur;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;events.md
-&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;Hardware
-&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;article-one.md
-&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxur;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;article-two.md
-&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt; &amp;nbsp;&amp;nbsp;&lt;/span&gt;&amp;boxur;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;Software
-&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp;     &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;article-three.md
-&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp;     &lt;/span&gt;&amp;boxur;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;article-four.md
-&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;Makefile
-&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;output
+&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;content
+&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;extra
+&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&amp;boxur;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;robots.txt
+&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;    &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;images
+&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;favicon.ico
+&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;    &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxur;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;camera.png
+&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;    &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;pages
+&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;    &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;about.md
+&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;    &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxur;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;events.md
+&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;    &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;Hardware
+&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;    &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;article-one.md
+&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;    &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxur;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;article-two.md
+&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;    &lt;/span&gt;&amp;boxur;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;Software
+&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;        &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;article-three.md
+&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;        &lt;/span&gt;&amp;boxur;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;article-four.md
+&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;Makefile
+&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;output
 &amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxv;
-&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;pelicanconf.py
-&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;pelican-plugins
-&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxur;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;pelican-toc
+&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;pelicanconf.py
+&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;pelican-plugins
+&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxur;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;pelican-toc
 &amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxv;
-&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;publishconf.py
-&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;tasks.py
-&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&amp;boxur;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;themes
-&amp;boxv;&lt;span class="w"&gt;&amp;nbsp;&amp;nbsp;     &lt;/span&gt;&amp;boxur;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;Papyrus
+&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;publishconf.py
+&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;tasks.py
+&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxur;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;themes
+&amp;boxv;&lt;span class="w"&gt;       &lt;/span&gt;&amp;boxur;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;Papyrus
 &amp;boxur;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;venv
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id="image-size-and-placement"&gt;Image size and placement&lt;/h3&gt;
@@ -153,7 +162,7 @@ Alternatively you could use inline styling.
 &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;img&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"{static}/images/screenshot.png"&lt;/span&gt; &lt;span class="na"&gt;alt&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"screenshot"&lt;/span&gt; &lt;span class="na"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"width:200px;"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id="embeding-youtube-videos"&gt;Embeding YouTube Videos&lt;/h3&gt;
-&lt;p&gt;In order to have a responsiveness video tumbnail, the &lt;code&gt;&amp;lt;iframe&amp;gt;&lt;/code&gt; tags must be wrapped inside the &lt;code&gt;&amp;lt;div class="aspect-w-16 aspect-h-9"&amp;gt;&amp;lt;/div&amp;gt;&lt;/code&gt; in your markdown file.&lt;/p&gt;
+&lt;p&gt;In order to have a responsiveness video thumbnail, the &lt;code&gt;&amp;lt;iframe&amp;gt;&lt;/code&gt; tags must be wrapped inside the &lt;code&gt;&amp;lt;div class="aspect-w-16 aspect-h-9"&amp;gt;&amp;lt;/div&amp;gt;&lt;/code&gt; in your markdown file.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"aspect-w-16 aspect-h-9"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
     &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;iframe&lt;/span&gt; &lt;span class="na"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"736"&lt;/span&gt; &lt;span class="na"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"414"&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://www.youtube.com/embed/TmWIrBPE6Bc"&lt;/span&gt; &lt;span class="na"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"YouTube video player"&lt;/span&gt; &lt;span class="na"&gt;frameborder&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"0"&lt;/span&gt; &lt;span class="na"&gt;allow&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"&lt;/span&gt; &lt;span class="na"&gt;allowfullscreen&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
     &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;iframe&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
@@ -168,9 +177,20 @@ $&lt;span class="w"&gt; &lt;/span&gt;npm&lt;span class="w"&gt; &lt;/span&gt;inst
 
 &lt;span class="c1"&gt;# JIT compiled main.css&lt;/span&gt;
 $&lt;span class="w"&gt; &lt;/span&gt;npm&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;dev
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Software"></category><category term="Web"></category><category term="Mobile"></category></entry><entry><title>Image sizing and placement</title><link href="https://aleylara.github.io/Papyrus/image-sizing-and-placement.html" rel="alternate"></link><published>2022-02-11T00:00:00+11:00</published><updated>2022-02-11T00:00:00+11:00</updated><author><name>Author</name></author><id>tag:aleylara.github.io,2022-02-11:/Papyrus/image-sizing-and-placement.html</id><summary type="html">&lt;p&gt;Peli-Papyrus tries to make image placement and sizing a little bit easier when generating your articles.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="performance-and-seo-improvements"&gt;Performance and SEO Improvements&lt;/h3&gt;
+&lt;p&gt;Settings file now has the placeholders for your &lt;code&gt;robots.txt&lt;/code&gt; and &lt;code&gt;favicon.ico&lt;/code&gt; files.
+Please note these files are &lt;strong&gt;not&lt;/strong&gt; included and they are required to be added by you.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;content
+&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;extra
+&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&amp;boxur;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;robots.txt
+&amp;boxv;&lt;span class="w"&gt;    &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;images
+&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;favicon.ico
+&amp;boxv;&lt;span class="w"&gt;    &lt;/span&gt;&amp;boxv;&lt;span class="w"&gt;   &lt;/span&gt;&amp;boxur;&amp;boxh;&amp;boxh;&lt;span class="w"&gt; &lt;/span&gt;camera.png
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If you are updating from an older version, please be sure to have your &lt;code&gt;pelicanconf.py&lt;/code&gt; updated with &lt;code&gt;EXTRA_PATH_METADATA&lt;/code&gt; and &lt;code&gt;STATIC_PATHS&lt;/code&gt; as seen in sample settings above.&lt;/p&gt;</content><category term="Software"></category><category term="Web"></category><category term="Mobile"></category></entry><entry><title>Image sizing and placement</title><link href="https://aleylara.github.io/Papyrus/image-sizing-and-placement.html" rel="alternate"></link><published>2022-02-11T00:00:00+11:00</published><updated>2022-02-11T00:00:00+11:00</updated><author><name>Author</name></author><id>tag:aleylara.github.io,2022-02-11:/Papyrus/image-sizing-and-placement.html</id><summary type="html">&lt;p&gt;Peli-Papyrus tries to make image placement and sizing a little bit easier when generating your articles.
 It includes built in custom classes that you can make use of directly in your Markdowns.&lt;/p&gt;</summary><content type="html">&lt;h1 id="float-image-left"&gt;Float Image Left&lt;/h1&gt;
-&lt;p&gt;&lt;img class="image-small image-left" src="https://aleylara.github.io/Papyrus/images/camera.png"/&gt;
+&lt;p&gt;&lt;img alt="camera icon" class="image-small image-left" src="https://aleylara.github.io/Papyrus/images/camera.png"/&gt;
 Lorem markdownum iuvenumque colebat pressa, frustra formosus quoque conterruit.
 Quaeri sagittas Solis praedelassat aera pretium, a voces secundo tellus. Nomina
 aura redeamus postquam regno, scribit lacrimisque demisso pulcherrime fecerat.
@@ -209,8 +229,8 @@ celerem in rogarem Ligurum te aurata timoris subiectaque
 &lt;a href="#"&gt;tubae&lt;/a&gt;) facundia deque; illa populis omnis squalidus
 sidere.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h1 id="float-image-right"&gt;Float Image Right&lt;/h1&gt;
-&lt;p&gt;&lt;img class="image-right image-small" src="https://aleylara.github.io/Papyrus/images/camera.png"/&gt;&lt;/p&gt;
+&lt;h2 id="float-image-right"&gt;Float Image Right&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="camera icon" class="image-right image-small" src="https://aleylara.github.io/Papyrus/images/camera.png"/&gt;&lt;/p&gt;
 &lt;p&gt;Deceant posita iuncti, ingens cam, dum nam; iniuria sub fer nostrae ausam Cenaeo
 os Byblis omnia. Nisi mutatas steterat addere. Interque tantae fama; imperio et
 expertus profugam perlucentes saepe, ingens cam, dum nam; iniuria sub fer nostrae ausam Cenaeo
@@ -227,8 +247,8 @@ meorum montis ait acceptas, vertitur; enim leti suspirat cuncta sentiet adiuvat.
 &lt;li&gt;Niseia in choreas sceleratus&lt;/li&gt;
 &lt;li&gt;Vultus pennis at librato coeperat terrae&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h1 id="center-image"&gt;Center Image&lt;/h1&gt;
-&lt;p&gt;&lt;img class="image-center image-large" src="https://aleylara.github.io/Papyrus/images/camera.png"/&gt;
+&lt;h2 id="center-image"&gt;Center Image&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="camera icon" class="image-center image-large" src="https://aleylara.github.io/Papyrus/images/camera.png"/&gt;
 In sit, ab tum everterit sentit sua semiferos veteres. Ventis et sepulto posse;
 tamen partim metuentior convertor dat ut Teucri color. Clamore vertuntur campus
 Aeolides formamque poscit taurorum &lt;em&gt;rapere&lt;/em&gt; nec vix saepibus capit alto succedat
@@ -237,7 +257,7 @@ cras. Dumque ille loqui, est luctus lacriment nostri est adspicio fatis captivis
 nullam capitis ut cunasque inquit? Tenditur et primum AI penitusque ad ranae
 excussit ossibus creatus: Bacche verto, litus veniam! Ille corpora instat nobis
 pars animum dant: vel equos et.&lt;/p&gt;
-&lt;h3 id="embeding-youtube-videos"&gt;Embeding YouTube Videos&lt;/h3&gt;
+&lt;h2 id="embeding-youtube-videos"&gt;Embeding YouTube Videos&lt;/h2&gt;
 &lt;div class="aspect-w-16 aspect-h-9"&gt;
 &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="238" src="https://www.youtube.com/embed/TmWIrBPE6Bc" title="YouTube video player" width="424"&gt;&lt;/iframe&gt;
 &lt;/div&gt;

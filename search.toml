@@ -1,5 +1,5 @@
 [input]
-base_directory = "output"
+base_directory = "/Users/devuser/Documents/src-PapyrusPages/output"
 html_selector = "main"
 
 [[input.files]]
