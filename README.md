@@ -218,6 +218,9 @@ $ npm run dev
 ```
 
 ### Performance and SEO Improvements
+
+![Performance](lighthouse.png "Lighthouse Report")
+
 Settings file now has the placeholders for your `robots.txt` and `favicon.ico` files.
 Please note these files are **not** included and they are required to be added by you.
 
