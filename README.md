@@ -1,4 +1,4 @@
-# Papyrus
+## Papyrus
 
 >This project is based on [hugo-PaperMod](https://github.com/adityatelange/hugo-PaperMod) which is a fork of [hugo-paper](https://github.com/nanxiaobei/hugo-paper). The goal of the project is to make a replica theme that works under Pelican site generator.
 
@@ -48,17 +48,15 @@ This is the `pelicanconf.py` settings file for the demo site, please change valu
 ```python
 AUTHOR = 'Author'
 SITENAME = 'Papyrus'
-SITEURL = 'http://localhost:8000'
+SITEURL = 'http://127.0.0.1:8000'
 TIMEZONE = 'Australia/Sydney'
 DEFAULT_LANG = 'en'
 
 SUBTITLE = 'Papyrus'
-SUBTEXT = '''A fast and responsive theme built for the <a class="underline" 
-href="https://blog.getpelican.com/">Pelican</a> site generator.<br>
-The theme is inspired from <a class="underline" 
-href="https://github.com/adityatelange/hugo-PaperMod">Hugo-PaperMod</a>. 
-It is styled using <a class="underline" 
-href="https://tailwindcss.com/">Tailwind CSS</a>. 
+SUBTEXT = '''A fast and responsive theme built for the 
+<a href="https://blog.getpelican.com/">Pelican</a> site generator.<br>
+The theme is inspired by <a href="https://github.com/adityatelange/hugo-PaperMod">Hugo-PaperMod</a>. 
+It is styled using <a href="https://tailwindcss.com/">Tailwind CSS</a>. 
 It supports dark mode and built in search function.
 '''
 COPYRIGHT = '©2022'
@@ -67,10 +65,18 @@ THEME = 'themes/Papyrus'
 THEME_STATIC_PATHS = ['static']
 PLUGIN_PATHS = ['pelican-plugins']
 PLUGINS = ['readtime', 'search', 'neighbors', 'pelican-toc']
-
+STATIC_PATHS = [
+    'images',
+    'images/favicon.ico',
+    'extra/robots.txt',
+    ]
+EXTRA_PATH_METADATA = {
+    'extra/robots.txt': {'path': 'robots.txt'},
+    'images/favicon.ico': {'path': 'favicon.ico'},
+    }
 DISPLAY_PAGES_ON_MENU = True
 DIRECT_TEMPLATES = (('index', 'search', 'tags', 'categories', 'archives',))
-PAGINATED_TEMPLATES = {'index':None,'tag':None,'category':None,'author':None,'archives':24,}
+PAGINATED_TEMPLATES = {'index': None, 'tag': None, 'category': None, 'author': None, 'archives': 24,}
 
 # Site search plugin
 SEARCH_MODE = "output"
@@ -120,7 +126,7 @@ DEFAULT_PAGINATION = 8
 ```
 
 ### Generate Articles
-A sample article header is below. Adding a `Summary` field is highly recommended. It substitutes as the article decription and gets added into html `<meta name="description" content="...">`. Summaries are also used in blog's home page. They help to keep similar height article previews without titles, images or code blocks.
+A sample article header is below. Adding a `Summary` field is highly recommended. It substitutes as the article description and gets added into html `<meta name="description" content="...">`. Summaries are also used in blog's home page. They help to keep similar height article previews without titles, images or code blocks.
 
 ```markdown
 Title: Installation
@@ -145,17 +151,20 @@ Final project directory structure should look similar to this.
 $ (pelican) ➜ myProject tree
 ├── myBlog
 │   ├── content
-│   │   ├── images
-│   │   │   └── camera.png
-│   │   ├── pages
-│   │   │   ├── about.md
-│   │   │   └── events.md
-│   │   ├── Hardware
-│   │   │   ├── article-one.md
-│   │   │   └── article-two.md
-│   │   └── Software
-│   │       ├── article-three.md
-│   │       └── article-four.md
+|   |    ├── extra
+│   |    |    └── robots.txt
+│   │    ├── images
+|   |    |   ├── favicon.ico
+│   │    │   └── camera.png
+│   │    ├── pages
+│   │    │   ├── about.md
+│   │    │   └── events.md
+│   │    ├── Hardware
+│   │    │   ├── article-one.md
+│   │    │   └── article-two.md
+│   │    └── Software
+│   │        ├── article-three.md
+│   │        └── article-four.md
 │   ├── Makefile
 │   ├── output
 │   │
@@ -168,7 +177,6 @@ $ (pelican) ➜ myProject tree
 │   └── themes
 │       └── Papyrus
 └── venv
-
 ```
 
 ### Image size and placement
@@ -187,7 +195,7 @@ Alternatively you could use inline styling.
 ```
 
 ### Embeding YouTube Videos
-In order to have a responsiveness video tumbnail, the `<iframe>` tags must be wrapped inside the `<div class="aspect-w-16 aspect-h-9"></div>` in your markdown file.
+In order to have a responsiveness video thumbnail, the `<iframe>` tags must be wrapped inside the `<div class="aspect-w-16 aspect-h-9"></div>` in your markdown file.
 
 ```html
 <div class="aspect-w-16 aspect-h-9">
@@ -209,3 +217,16 @@ $ npm install
 $ npm run dev
 ```
 
+### Performance and SEO Improvements
+Settings file now has the placeholders for your `robots.txt` and `favicon.ico` files.
+Please note these files are **not** included and they are required to be added by you.
+
+```bash
+├── content
+|    ├── extra
+|    |    └── robots.txt
+│    ├── images
+|    |   ├── favicon.ico
+│    │   └── camera.png
+```
+If you are updating from an older version, please be sure to have your `pelicanconf.py` updated with `EXTRA_PATH_METADATA` and `STATIC_PATHS` as seen in sample settings above.
