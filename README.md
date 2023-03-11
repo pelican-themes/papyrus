@@ -138,7 +138,7 @@ Summary: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignis
 
 Articles created inside directory named `pages` will have a separate static page and a direct link similar to the `About` page in the demo.
 
-You can now run the development server and visit the `http://127.0.0.1:8000`
+You can now run the development server and visit `http://127.0.0.1:8000`
 
 ```bash
 cd myBlog
