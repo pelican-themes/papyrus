@@ -151,10 +151,10 @@ Final project directory structure should look similar to this.
 $ (pelican) ➜ myProject tree
 ├── myBlog
 │   ├── content
-|   |    ├── extra
-│   |    |    └── robots.txt
+│   │    ├── extra
+│   │    │    └── robots.txt
 │   │    ├── images
-|   |    |   ├── favicon.ico
+│   │    │   ├── favicon.ico
 │   │    │   └── camera.png
 │   │    ├── pages
 │   │    │   ├── about.md
@@ -226,10 +226,10 @@ Please note these files are **not** included and they are required to be added b
 
 ```bash
 ├── content
-|    ├── extra
-|    |    └── robots.txt
+│    ├── extra
+│    │    └── robots.txt
 │    ├── images
-|    |   ├── favicon.ico
+│    │   ├── favicon.ico
 │    │   └── camera.png
 ```
 If you are updating from an older version, please be sure to have your `pelicanconf.py` updated with `EXTRA_PATH_METADATA` and `STATIC_PATHS` as seen in sample settings above.
