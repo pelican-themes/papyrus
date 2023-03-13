@@ -101,7 +101,7 @@
       <div class="flex text-xs text-zinc-800 dark:text-zinc-400">
         <time>February 12, 2022</time>
         <div>
-          <span>&nbsp;·&nbsp;7 min read</span>
+          <span>&nbsp;·&nbsp;6 min read</span>
         </div>
         <div>
           <span>&nbsp;·&nbsp;Author</span>
@@ -136,28 +136,28 @@
 <p>A fast and responsive theme built for the <a href="https://blog.getpelican.com/">Pelican</a> site generator. The theme is inspired by <a href="https://github.com/adityatelange/hugo-PaperMod">Hugo-PaperMod</a>. It is styled using <a href="https://tailwindcss.com/">Tailwind CSS</a>. It supports dark mode and built in search function. </p>
 <h3 id="installation">Installation</h3>
 <p>The theme requires the <a href="https://github.com/pelican-plugins/search">pelican-search</a>, <a href="https://github.com/pelican-plugins/neighbors">pelican-neighbors</a>, <a href="https://github.com/JenkinsDev/pelican-readtime">pelican-readtime</a> and <a href="https://github.com/ingwinlu/pelican-toc">pelican-toc</a> plugins. First three plugins can be installed using <code>pip</code>. Pelican-toc will be installed manually. We will also need <a href="https://stork-search.net/">stork</a> and <code>beautifulsoup4</code> as dependencies.</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pelican-search
-$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pelican-neighbors
-$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pelican-readtime
+<div class="highlight"><pre><span></span><code>$ pip install pelican-search
+$ pip install pelican-neighbors
+$ pip install pelican-readtime
 </code></pre></div>
 <p>Create two directories <code>themes</code> and <code>pelican-plugins</code> inside the root level of your project. Clone the Papyrus theme inside the <code>themes</code> directory that you created.</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>myBlog<span class="w"> </span>
-$<span class="w"> </span>mkdir<span class="w"> </span>themes
-$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>themes
-$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/aleylara/Papyrus.git
+<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> myBlog 
+$ mkdir themes
+$ <span class="nb">cd</span> themes
+$ git clone https://github.com/aleylara/Papyrus.git
 </code></pre></div>
 <p>Now clone the pelican-toc plugin repo (not available via pip) into your pelican-plugins directory and install <code>beautifulsoup4</code> that is required by this plugin.</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mkdir<span class="w"> </span>pelican-plugins
-$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>pelican-plugins
-$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ingwinlu/pelican-toc.git
-$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>beautifulsoup4
+<div class="highlight"><pre><span></span><code>$ mkdir pelican-plugins
+$ <span class="nb">cd</span> pelican-plugins
+$ git clone https://github.com/ingwinlu/pelican-toc.git
+$ pip install beautifulsoup4
 </code></pre></div>
 <p>Papyrus theme is already setup for your search functionality. However you will still need to have the <code>stork</code> package installed in your operating system. Verify <a href="https://stork-search.net/">stork</a> is in your path by <code>stork -h</code> otherwise go ahead and install it.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Install using Homebrew</span>
-$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>stork-search/stork-tap/stork
+$ brew install stork-search/stork-tap/stork
 
 <span class="c1"># Install using the Rust toolchain and install Stork with Cargo </span>
-$<span class="w"> </span>cargo<span class="w"> </span>install<span class="w"> </span>stork-search<span class="w"> </span>--locked
+$ cargo install stork-search --locked
 </code></pre></div>
 <h3 id="settings">Settings</h3>
 <p>This is the <code>pelicanconf.py</code> settings file for the demo site, please change values to meet your needs.</p>
@@ -249,39 +249,39 @@ Summary: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignis
 </code></pre></div>
 <p>Articles created inside directory named <code>pages</code> will have a separate static page and a direct link similar to the <code>About</code> page in the demo.</p>
 <p>You can now run the development server and visit <code>http://127.0.0.1:8000/</code></p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>myBlog
-$<span class="w"> </span>pelican<span class="w"> </span>--autoreload<span class="w"> </span>--listen<span class="w"> </span>--ignore-cache
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> myBlog
+$ pelican --autoreload --listen --ignore-cache
 </code></pre></div>
 <p>Final project directory structure should look similar to this. </p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="o">(</span>pelican<span class="o">)</span><span class="w"> </span>➜<span class="w"> </span>myProject<span class="w"> </span>tree
-&boxvr;&boxh;&boxh;<span class="w"> </span>myBlog
-&boxv;<span class="w">   </span>&boxvr;&boxh;&boxh;<span class="w"> </span>content
-&boxv;<span class="w">   </span>&boxv;<span class="w">    </span>&boxvr;&boxh;&boxh;<span class="w"> </span>extra
-&boxv;<span class="w">   </span>&boxv;<span class="w">    </span>&boxv;<span class="w">    </span>&boxur;&boxh;&boxh;<span class="w"> </span>robots.txt
-&boxv;<span class="w">   </span>&boxv;<span class="w">    </span>&boxvr;&boxh;&boxh;<span class="w"> </span>images
-&boxv;<span class="w">   </span>&boxv;<span class="w">    </span>&boxv;<span class="w">   </span>&boxvr;&boxh;&boxh;<span class="w"> </span>favicon.ico
-&boxv;<span class="w">   </span>&boxv;<span class="w">    </span>&boxv;<span class="w">   </span>&boxur;&boxh;&boxh;<span class="w"> </span>camera.png
-&boxv;<span class="w">   </span>&boxv;<span class="w">    </span>&boxvr;&boxh;&boxh;<span class="w"> </span>pages
-&boxv;<span class="w">   </span>&boxv;<span class="w">    </span>&boxv;<span class="w">   </span>&boxvr;&boxh;&boxh;<span class="w"> </span>about.md
-&boxv;<span class="w">   </span>&boxv;<span class="w">    </span>&boxv;<span class="w">   </span>&boxur;&boxh;&boxh;<span class="w"> </span>events.md
-&boxv;<span class="w">   </span>&boxv;<span class="w">    </span>&boxvr;&boxh;&boxh;<span class="w"> </span>Hardware
-&boxv;<span class="w">   </span>&boxv;<span class="w">    </span>&boxv;<span class="w">   </span>&boxvr;&boxh;&boxh;<span class="w"> </span>article-one.md
-&boxv;<span class="w">   </span>&boxv;<span class="w">    </span>&boxv;<span class="w">   </span>&boxur;&boxh;&boxh;<span class="w"> </span>article-two.md
-&boxv;<span class="w">   </span>&boxv;<span class="w">    </span>&boxur;&boxh;&boxh;<span class="w"> </span>Software
-&boxv;<span class="w">   </span>&boxv;<span class="w">        </span>&boxvr;&boxh;&boxh;<span class="w"> </span>article-three.md
-&boxv;<span class="w">   </span>&boxv;<span class="w">        </span>&boxur;&boxh;&boxh;<span class="w"> </span>article-four.md
-&boxv;<span class="w">   </span>&boxvr;&boxh;&boxh;<span class="w"> </span>Makefile
-&boxv;<span class="w">   </span>&boxvr;&boxh;&boxh;<span class="w"> </span>output
-&boxv;<span class="w">   </span>&boxv;
-&boxv;<span class="w">   </span>&boxvr;&boxh;&boxh;<span class="w"> </span>pelicanconf.py
-&boxv;<span class="w">   </span>&boxvr;&boxh;&boxh;<span class="w"> </span>pelican-plugins
-&boxv;<span class="w">   </span>&boxv;<span class="w">   </span>&boxur;&boxh;&boxh;<span class="w"> </span>pelican-toc
-&boxv;<span class="w">   </span>&boxv;
-&boxv;<span class="w">   </span>&boxvr;&boxh;&boxh;<span class="w"> </span>publishconf.py
-&boxv;<span class="w">   </span>&boxvr;&boxh;&boxh;<span class="w"> </span>tasks.py
-&boxv;<span class="w">   </span>&boxur;&boxh;&boxh;<span class="w"> </span>themes
-&boxv;<span class="w">       </span>&boxur;&boxh;&boxh;<span class="w"> </span>Papyrus
-&boxur;&boxh;&boxh;<span class="w"> </span>venv
+<div class="highlight"><pre><span></span><code>$ <span class="o">(</span>pelican<span class="o">)</span> ➜ myProject tree
+&boxvr;&boxh;&boxh; myBlog
+&boxv;   &boxvr;&boxh;&boxh; content
+&boxv;   &boxv;    &boxvr;&boxh;&boxh; extra
+&boxv;   &boxv;    &boxv;    &boxur;&boxh;&boxh; robots.txt
+&boxv;   &boxv;    &boxvr;&boxh;&boxh; images
+&boxv;   &boxv;    &boxv;   &boxvr;&boxh;&boxh; favicon.ico
+&boxv;   &boxv;    &boxv;   &boxur;&boxh;&boxh; camera.png
+&boxv;   &boxv;    &boxvr;&boxh;&boxh; pages
+&boxv;   &boxv;    &boxv;   &boxvr;&boxh;&boxh; about.md
+&boxv;   &boxv;    &boxv;   &boxur;&boxh;&boxh; events.md
+&boxv;   &boxv;    &boxvr;&boxh;&boxh; Hardware
+&boxv;   &boxv;    &boxv;   &boxvr;&boxh;&boxh; article-one.md
+&boxv;   &boxv;    &boxv;   &boxur;&boxh;&boxh; article-two.md
+&boxv;   &boxv;    &boxur;&boxh;&boxh; Software
+&boxv;   &boxv;        &boxvr;&boxh;&boxh; article-three.md
+&boxv;   &boxv;        &boxur;&boxh;&boxh; article-four.md
+&boxv;   &boxvr;&boxh;&boxh; Makefile
+&boxv;   &boxvr;&boxh;&boxh; output
+&boxv;   &boxv;
+&boxv;   &boxvr;&boxh;&boxh; pelicanconf.py
+&boxv;   &boxvr;&boxh;&boxh; pelican-plugins
+&boxv;   &boxv;   &boxur;&boxh;&boxh; pelican-toc
+&boxv;   &boxv;
+&boxv;   &boxvr;&boxh;&boxh; publishconf.py
+&boxv;   &boxvr;&boxh;&boxh; tasks.py
+&boxv;   &boxur;&boxh;&boxh; themes
+&boxv;       &boxur;&boxh;&boxh; Papyrus
+&boxur;&boxh;&boxh; venv
 </code></pre></div>
 <h3 id="image-size-and-placement">Image size and placement</h3>
 <p>Images can be placed on page by adding a custom class names such as <code>image-left</code>, <code>image-right</code>, <code>image-center</code> in your markdown.</p>
@@ -304,21 +304,21 @@ Alternatively you could use inline styling.
 <p>If you would like to make any local changes, tailwindcss configuration files are included with the theme. First go into the Papyrus directory and install missing packages with <code>npm install</code>.
 Then run the development server that watches for your changed tailwind classes inside the templates folder and updates <code>main.css</code> on the go.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Initial installation of packages</span>
-$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>themes/Papyrus
-$<span class="w"> </span>npm<span class="w"> </span>install
+$ <span class="nb">cd</span> themes/Papyrus
+$ npm install
 
 <span class="c1"># JIT compiled main.css</span>
-$<span class="w"> </span>npm<span class="w"> </span>run<span class="w"> </span>dev
+$ npm run dev
 </code></pre></div>
 <h3 id="performance-and-seo-improvements">Performance and SEO Improvements</h3>
 <p>Settings file now has the placeholders for your <code>robots.txt</code> and <code>favicon.ico</code> files.
 Please note these files are <strong>not</strong> included and they are required to be added by you.</p>
-<div class="highlight"><pre><span></span><code>&boxvr;&boxh;&boxh;<span class="w"> </span>content
-&boxv;<span class="w">    </span>&boxvr;&boxh;&boxh;<span class="w"> </span>extra
-&boxv;<span class="w">    </span>&boxv;<span class="w">    </span>&boxur;&boxh;&boxh;<span class="w"> </span>robots.txt
-&boxv;<span class="w">    </span>&boxvr;&boxh;&boxh;<span class="w"> </span>images
-&boxv;<span class="w">    </span>&boxv;<span class="w">   </span>&boxvr;&boxh;&boxh;<span class="w"> </span>favicon.ico
-&boxv;<span class="w">    </span>&boxv;<span class="w">   </span>&boxur;&boxh;&boxh;<span class="w"> </span>camera.png
+<div class="highlight"><pre><span></span><code>&boxvr;&boxh;&boxh; content
+&boxv;    &boxvr;&boxh;&boxh; extra
+&boxv;    &boxv;    &boxur;&boxh;&boxh; robots.txt
+&boxv;    &boxvr;&boxh;&boxh; images
+&boxv;    &boxv;   &boxvr;&boxh;&boxh; favicon.ico
+&boxv;    &boxv;   &boxur;&boxh;&boxh; camera.png
 </code></pre></div>
 <p>If you are updating from an older version, please be sure to have your <code>pelicanconf.py</code> updated with <code>EXTRA_PATH_METADATA</code> and <code>STATIC_PATHS</code> as seen in sample settings above.</p>
     <!-- <div class="aspect-w-16 aspect-h-9 mx-auto"></div> CSS placeholder -->
