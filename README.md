@@ -5,7 +5,7 @@
 A fast and responsive theme built for the [Pelican](https://blog.getpelican.com/) site generator. It is styled using [Tailwind CSS](https://tailwindcss.com/). It supports dark mode and built in search function. 
 
 ### Demo
-Live-Demo at [https://aleylara.github.io/Papyrus](https://aleylara.github.io/Papyrus)
+Live-Demo at [https://aleylara.github.io/Papyrus/](https://aleylara.github.io/Papyrus)
 
 ### Installation
 The theme requires the [pelican-search](https://github.com/pelican-plugins/search), [pelican-neighbors](https://github.com/pelican-plugins/neighbors), [pelican-readtime](https://github.com/JenkinsDev/pelican-readtime) and [pelican-toc](https://github.com/ingwinlu/pelican-toc) plugins. First three plugins can be installed using `pip`. Pelican-toc will be installed manually. We will also need [stork](https://stork-search.net/) and `beautifulsoup4` as dependencies.
@@ -102,7 +102,7 @@ RSS_FEED_SUMMARY_ONLY = True
 
 # Social widgets
 SOCIAL = (
-    ('github', 'https://github.com/aleylara/Papyrus'),
+    ('github', 'https://github.com/aleylara/Papyrus/'),
     ('twitter', 'https://twitter.com/'),
 )
 
