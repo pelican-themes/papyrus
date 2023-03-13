@@ -1,83 +1,83 @@
 [input]
-base_directory = "/Users/devuser/Documents/src-PapyrusPages/output"
+base_directory = "/home/xps/Python/Pelican/src-PapyrusPages/output"
 html_selector = "main"
 
 [[input.files]]
 path = "pages/about.html"
-url = "/pages/about.html"
+url = "pages/about.html"
 title = "About"
 
 [[input.files]]
 path = "pages/events.html"
-url = "/pages/events.html"
+url = "pages/events.html"
 title = "Events"
 
 [[input.files]]
 path = "installation.html"
-url = "/installation.html"
+url = "installation.html"
 title = "Installation"
 
 [[input.files]]
 path = "image-sizing-and-placement.html"
-url = "/image-sizing-and-placement.html"
+url = "image-sizing-and-placement.html"
 title = "Image sizing and placement"
 
 [[input.files]]
 path = "veterum-dare-quibus.html"
-url = "/veterum-dare-quibus.html"
+url = "veterum-dare-quibus.html"
 title = "Veterum dare quibus"
 
 [[input.files]]
 path = "quam-oris-regia-ne-eminus-insignia-illum.html"
-url = "/quam-oris-regia-ne-eminus-insignia-illum.html"
+url = "quam-oris-regia-ne-eminus-insignia-illum.html"
 title = "Quam oris regia ne eminus insignia illum"
 
 [[input.files]]
 path = "quique-ipso-pio.html"
-url = "/quique-ipso-pio.html"
+url = "quique-ipso-pio.html"
 title = "Quique ipso pio"
 
 [[input.files]]
 path = "acrior-dic-inconcessisque-voco-vestes.html"
-url = "/acrior-dic-inconcessisque-voco-vestes.html"
+url = "acrior-dic-inconcessisque-voco-vestes.html"
 title = "Acrior dic inconcessisque voco vestes"
 
 [[input.files]]
 path = "fixus-calydonius-via-et-me.html"
-url = "/fixus-calydonius-via-et-me.html"
+url = "fixus-calydonius-via-et-me.html"
 title = "Fixus Calydonius via et me"
 
 [[input.files]]
 path = "zonarumque-credit.html"
-url = "/zonarumque-credit.html"
+url = "zonarumque-credit.html"
 title = "Zonarumque credit"
 
 [[input.files]]
 path = "pelopeiadesque-facta.html"
-url = "/pelopeiadesque-facta.html"
+url = "pelopeiadesque-facta.html"
 title = "Pelopeiadesque facta"
 
 [[input.files]]
 path = "vituli-cubitique-antiquas-quot.html"
-url = "/vituli-cubitique-antiquas-quot.html"
+url = "vituli-cubitique-antiquas-quot.html"
 title = "Vituli cubitique antiquas quot"
 
 [[input.files]]
 path = "luvenem-auras-umbras.html"
-url = "/luvenem-auras-umbras.html"
+url = "luvenem-auras-umbras.html"
 title = "Luvenem auras umbras"
 
 [[input.files]]
 path = "erat-fisa-ignavis-cornua.html"
-url = "/erat-fisa-ignavis-cornua.html"
+url = "erat-fisa-ignavis-cornua.html"
 title = "Erat fisa ignavis cornua"
 
 [[input.files]]
 path = "terram-cultro-omnes.html"
-url = "/terram-cultro-omnes.html"
+url = "terram-cultro-omnes.html"
 title = "Terram cultro omnes"
 
 [[input.files]]
 path = "licet-orbes-ibat-parvi-obliquo-vulneribus-variusque-formam-aquosae.html"
-url = "/licet-orbes-ibat-parvi-obliquo-vulneribus-variusque-formam-aquosae.html"
+url = "licet-orbes-ibat-parvi-obliquo-vulneribus-variusque-formam-aquosae.html"
 title = "Licet orbes ibat parvi obliquo Vulneribus variusque formam aquosae"
