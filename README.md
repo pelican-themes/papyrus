@@ -48,7 +48,7 @@ This is the `pelicanconf.py` settings file for the demo site, please change valu
 ```python
 AUTHOR = 'Author'
 SITENAME = 'Papyrus'
-SITEURL = 'http://127.0.0.1:8000'
+SITEURL = 'http://127.0.0.1:8000/'
 TIMEZONE = 'Australia/Sydney'
 DEFAULT_LANG = 'en'
 
@@ -138,7 +138,7 @@ Summary: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignis
 
 Articles created inside directory named `pages` will have a separate static page and a direct link similar to the `About` page in the demo.
 
-You can now run the development server and visit `http://127.0.0.1:8000`
+You can now run the development server and visit `http://127.0.0.1:8000/`
 
 ```bash
 cd myBlog
@@ -195,7 +195,7 @@ Alternatively you could use inline styling.
 ```
 
 ### Embeding YouTube Videos
-In order to have a responsiveness video thumbnail, the `<iframe>` tags must be wrapped inside the `<div class="aspect-w-16 aspect-h-9"></div>` in your markdown file.
+In order to have a responsive video thumbnail, the `<iframe>` tags must be wrapped inside the `<div class="aspect-w-16 aspect-h-9"></div>` in your markdown file.
 
 ```html
 <div class="aspect-w-16 aspect-h-9">
