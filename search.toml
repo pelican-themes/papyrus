@@ -1,5 +1,5 @@
 [input]
-base_directory = "/home/xps/Python/Pelican/src-PapyrusPages/output"
+base_directory = "output"
 html_selector = "main"
 
 [[input.files]]
